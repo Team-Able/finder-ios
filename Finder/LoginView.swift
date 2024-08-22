@@ -4,6 +4,8 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var showPassword = false
+    @State private var islogin = false
+    @State private var isalert = false
     
     var isLoginDisabled: Bool {
         email.isEmpty || password.isEmpty
@@ -20,6 +22,7 @@ struct LoginView: View {
                 Text("찾았다!")
                     .foregroundColor(.maincolor)
                     .bold()
+                    .padding()
                 Spacer()
                 
                 VStack(spacing: 20) {
@@ -87,7 +90,20 @@ struct LoginView: View {
                                 .foregroundColor(Color.maincolor)
                         }
                     }
-                    NavigationLink(destination: MainView()){
+                    
+                    
+                    Button {
+                        postlogin(email: "", password: "" ) { result in
+                            switch result {
+                            case.success(let response):
+                                print("로그인 성공, 응답: \(response)")
+                                islogin = true
+                            case .failure(let error):
+                                print("로그인 실패. 에러: \(error)")
+                                isalert = true
+                            }
+                        }
+                    } label: {
                         Text("로그인")
                             .font(.system(size: 20))
                             .bold()
@@ -97,9 +113,19 @@ struct LoginView: View {
                             .cornerRadius(13)
                             .padding(10)
                             .bold()
+                            .alert(isPresented: $isalert) {
+                                Alert(title: Text("로그인 실패"),
+                                      message: Text("이메일과 비밀번호를 다시 확인해주세요."),
+                                      dismissButton: .default(Text("확인")))
+                                
+                            }
                     }
-                    .disabled(isLoginDisabled)
                 }
+                NavigationLink(destination: MainView(), isActive: $islogin) {
+                    EmptyView()
+                }
+                
+                .disabled(isLoginDisabled)
             }
         }
         .navigationBarBackButtonHidden(true)
