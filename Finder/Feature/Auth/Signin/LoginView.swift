@@ -121,6 +121,7 @@ struct LoginView: View {
                             }
                     }
                 }
+                
                 NavigationLink(destination: MainView(), isActive: $islogin) {
                     EmptyView()
                 }

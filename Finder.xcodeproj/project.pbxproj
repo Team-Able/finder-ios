@@ -43,6 +43,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6512431B2C787EEE008E798D /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				651243202C787FDF008E798D /* Auth */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		6512431D2C787F01008E798D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6512431E2C787F12008E798D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				6512EB4C2C7736170044FDEE /* FinderApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		651243202C787FDF008E798D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				651243242C7880F2008E798D /* Home */,
+				651243232C788062008E798D /* Signup */,
+				651243222C78803B008E798D /* Signin */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		651243222C78803B008E798D /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				6512EB642C7737DA0044FDEE /* LoginView.swift */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		651243232C788062008E798D /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				6512EB622C7737D00044FDEE /* SignUpView.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		651243242C7880F2008E798D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6512EB662C7737F50044FDEE /* MainView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		6512EB402C7736170044FDEE = {
 			isa = PBXGroup;
 			children = (
@@ -62,11 +119,10 @@
 		6512EB4B2C7736170044FDEE /* Finder */ = {
 			isa = PBXGroup;
 			children = (
+				6512431E2C787F12008E798D /* Application */,
+				6512431D2C787F01008E798D /* Model */,
+				6512431B2C787EEE008E798D /* Feature */,
 				6512EB5A2C77363C0044FDEE /* Info.plist */,
-				6512EB4C2C7736170044FDEE /* FinderApp.swift */,
-				6512EB642C7737DA0044FDEE /* LoginView.swift */,
-				6512EB622C7737D00044FDEE /* SignUpView.swift */,
-				6512EB662C7737F50044FDEE /* MainView.swift */,
 				6512EB5B2C7737A00044FDEE /* SignUp+Login.swift */,
 				6512EB502C7736180044FDEE /* Assets.xcassets */,
 				6512EB522C7736180044FDEE /* Preview Content */,
