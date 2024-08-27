@@ -1,10 +1,9 @@
 import SwiftUI
 
 struct SignupView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @State private var checkpassword = ""
-    @State private var username = ""
+    
+    @StateObject var signupVM: SignUpViewModel = .init()
+    
     @State private var showPassword = false
     @State private var showcheckPassword = false
     @State private var showingAlert = false
@@ -12,9 +11,7 @@ struct SignupView: View {
     @State private var Error = false
     @Environment(\.dismiss) var dismiss
     
-    var isLoginDisabled: Bool {
-        email.isEmpty || password.isEmpty || checkpassword.isEmpty || password != checkpassword || username.isEmpty
-    }
+    
     
     var body: some View {
         VStack {
@@ -39,7 +36,7 @@ struct SignupView: View {
                             .foregroundColor(Color.gray)
                             .padding(.leading, 12)
                         
-                        TextField("이메일을 입력하세요.", text: $email)
+                        TextField("이메일을 입력하세요.", text: $signupVM.request.email)
                             .font(.system(size: 15))
                             .padding(.leading, 11)
                             .frame(height: 50)
@@ -57,7 +54,7 @@ struct SignupView: View {
                             .frame(width: 20, height: 20)
                             .padding(.leading, 12)
                         
-                        TextField("닉네임을 입력하세요.", text: $username)
+                        TextField("닉네임을 입력하세요.", text: $signupVM.request.username)
                             .font(.system(size: 15))
                             .padding(.leading, 11)
                             .frame(height: 50)
@@ -76,12 +73,12 @@ struct SignupView: View {
                             .padding(.leading, 13)
                         
                         if showPassword {
-                            TextField("비밀번호를 입력하세요", text: $password)
+                            TextField("비밀번호를 입력하세요", text: $signupVM.request.password)
                                 .font(.system(size: 15))
                                 .padding(.leading, 10)
                                 .frame(height: 50)
                         } else {
-                            SecureField("비밀번호를 입력하세요.", text: $password)
+                            SecureField("비밀번호를 입력하세요.", text: $signupVM.request.password)
                                 .font(.system(size: 15))
                                 .padding(.leading, 10)
                                 .frame(height: 50)
@@ -108,17 +105,17 @@ struct SignupView: View {
                             .padding(.leading, 13)
                         
                         if showcheckPassword {
-                            TextField("비밀번호를 한번 더 입력하세요", text: $checkpassword)
+                            TextField("비밀번호를 한번 더 입력하세요", text: $signupVM.request.checkpassword)
                                 .font(.system(size: 15))
                                 .padding(.leading, 10)
                                 .frame(height: 50)
                         } else {
-                            SecureField("비밀번호를 한번 더 입력하세요.", text: $checkpassword)
+                            SecureField("비밀번호를 한번 더 입력하세요.", text: $signupVM.request.checkpassword)
                                 .font(.system(size: 15))
                                 .padding(.leading, 10)
                                 .frame(height: 50)
                         }
-                        if password == checkpassword && !checkpassword.isEmpty {
+                        if signupVM.request.password == signupVM.request.checkpassword && !signupVM.request.checkpassword.isEmpty {
                             Image(systemName: "checkmark")
                                 .foregroundColor(.maincolor)
                                 .padding(.trailing, 12)
@@ -135,44 +132,35 @@ struct SignupView: View {
                 Spacer()
                 VStack {
                     Button(action: {
+                        signupVM.signUp()
                         showingAlert = true
-                        postSignup(email: email, password: password, userName: username){ response in
-                            switch response {
-                            case .success(let response):
-                                print("로그인 성공, 응답: \(response)")
-                                Error = false
-                            case .failure(let error):
-                                print("로그인 실패, 에러: \(error)")
-                                Error = true
-                            }
-                        }
                     }) {
                         Text("회원가입")
                             .font(.system(size: 20))
                             .bold()
                             .foregroundColor(.white)
                             .frame(width: 330, height: 60)
-                            .background(isLoginDisabled ? Color.init(uiColor: .systemGray4) : Color.maincolor)
+                            .background(signupVM.isSignupDisabled ? Color.init(uiColor: .systemGray4) : Color.maincolor)
                             .cornerRadius(13)
                             .padding(15)
                     }
-                    .disabled(isLoginDisabled)
+                    .disabled(signupVM.isSignupDisabled)
                     .alert(isPresented: $showingAlert) {
-                        if Error {
+                        if let signuperrorMessage = signupVM.signuperrorMessage {
                             Alert(title: Text("회원가입 실패"),
-                                         message: Text("예상치 못한 오류가 발생했습니다."),
-                                         dismissButton: .default(Text("확인")))
+                                  message: Text(signuperrorMessage),
+                                  dismissButton: .default(Text("확인")))
                         } else {
                             Alert(title: Text("회원가입 완료"),
-                                         message: Text("이메일과 비밀번호를 기억해주세요."),
-                                         dismissButton: .default(Text("확인")) {
+                                  message: Text("이메일과 비밀번호를 기억해주세요."),
+                                  dismissButton: .default(Text("확인")) {
                                 shouldNavigateToFirstView = true
                             })
                         }
                     }
                 }
-                NavigationLink(destination: LoginView(), isActive: $shouldNavigateToFirstView) {
-                    EmptyView()
+                .navigationDestination(isPresented: $shouldNavigateToFirstView) {
+                    LoginView()
                 }
             }
             .navigationBarBackButtonHidden(true)
