@@ -6,7 +6,7 @@ class SignUpViewModel: ObservableObject {
     @Published var signuperrorMessage: String? = nil
     
     var isSignupDisabled: Bool {
-        request.email.isEmpty || request.password.isEmpty || request.checkpassword.isEmpty || request.password != request.checkpassword || request.username.isEmpty
+        request.email.isEmpty || request.password.isEmpty || request.password.isEmpty || request.username.isEmpty
     }
         
     func signUp() {

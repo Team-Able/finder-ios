@@ -2,9 +2,14 @@ import SwiftUI
 
 @main
 struct FinderApp: App {
+    @ObservedObject var loginVM: LoginViewModel = .init()
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            if loginVM.islogin == true {
+                MainView()
+            } else {
+                LoginView()
+            }
         }
     }
 }

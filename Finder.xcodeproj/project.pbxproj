@@ -14,11 +14,25 @@
 		6512EB4D2C7736170044FDEE /* FinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512EB4C2C7736170044FDEE /* FinderApp.swift */; };
 		6512EB512C7736180044FDEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6512EB502C7736180044FDEE /* Assets.xcassets */; };
 		6512EB542C7736180044FDEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6512EB532C7736180044FDEE /* Preview Assets.xcassets */; };
-		6512EB5C2C7737A00044FDEE /* SignUp+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512EB5B2C7737A00044FDEE /* SignUp+Login.swift */; };
 		6512EB5F2C7737B40044FDEE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6512EB5E2C7737B40044FDEE /* Alamofire */; };
 		6512EB632C7737D00044FDEE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512EB622C7737D00044FDEE /* SignUpView.swift */; };
 		6512EB652C7737DA0044FDEE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512EB642C7737DA0044FDEE /* LoginView.swift */; };
 		6512EB672C7737F50044FDEE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512EB662C7737F50044FDEE /* MainView.swift */; };
+		657C4E982C8AD72D00FE63E1 /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657C4E972C8AD72D00FE63E1 /* Textfield.swift */; };
+		657C4E9B2C8AE2BC00FE63E1 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657C4E9A2C8AE2BC00FE63E1 /* TokenResponse.swift */; };
+		65FEC7082C8F25040067A2C5 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEC7072C8F25040067A2C5 /* ProgressBarView.swift */; };
+		65FEC7142C8F3A780067A2C5 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC70B2C8F3A770067A2C5 /* Pretendard-Black.ttf */; };
+		65FEC7152C8F3A780067A2C5 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC70C2C8F3A770067A2C5 /* Pretendard-SemiBold.ttf */; };
+		65FEC7162C8F3A780067A2C5 /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC70D2C8F3A770067A2C5 /* Pretendard-ExtraLight.ttf */; };
+		65FEC7172C8F3A780067A2C5 /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC70E2C8F3A770067A2C5 /* Pretendard-Thin.ttf */; };
+		65FEC7182C8F3A780067A2C5 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC70F2C8F3A780067A2C5 /* Pretendard-Bold.ttf */; };
+		65FEC7192C8F3A780067A2C5 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC7102C8F3A780067A2C5 /* Pretendard-Medium.ttf */; };
+		65FEC71A2C8F3A780067A2C5 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC7112C8F3A780067A2C5 /* Pretendard-Light.ttf */; };
+		65FEC71B2C8F3A780067A2C5 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC7122C8F3A780067A2C5 /* Pretendard-Regular.ttf */; };
+		65FEC71C2C8F3A780067A2C5 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC7132C8F3A780067A2C5 /* Pretendard-ExtraBold.ttf */; };
+		65FEC71F2C8FC0380067A2C5 /* EmailAuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEC71E2C8FC0380067A2C5 /* EmailAuthenticationView.swift */; };
+		65FEC7222C8FC0710067A2C5 /* PasswordsettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEC7212C8FC0710067A2C5 /* PasswordsettingView.swift */; };
+		65FEC7252C8FC0960067A2C5 /* AreasettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEC7242C8FC0960067A2C5 /* AreasettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +45,24 @@
 		6512EB502C7736180044FDEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6512EB532C7736180044FDEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6512EB5A2C77363C0044FDEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		6512EB5B2C7737A00044FDEE /* SignUp+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUp+Login.swift"; sourceTree = "<group>"; };
 		6512EB622C7737D00044FDEE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		6512EB642C7737DA0044FDEE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6512EB662C7737F50044FDEE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		657C4E972C8AD72D00FE63E1 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
+		657C4E9A2C8AE2BC00FE63E1 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		65FEC7072C8F25040067A2C5 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		65FEC70B2C8F3A770067A2C5 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
+		65FEC70C2C8F3A770067A2C5 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
+		65FEC70D2C8F3A770067A2C5 /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
+		65FEC70E2C8F3A770067A2C5 /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
+		65FEC70F2C8F3A780067A2C5 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		65FEC7102C8F3A780067A2C5 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
+		65FEC7112C8F3A780067A2C5 /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
+		65FEC7122C8F3A780067A2C5 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
+		65FEC7132C8F3A780067A2C5 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
+		65FEC71E2C8FC0380067A2C5 /* EmailAuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAuthenticationView.swift; sourceTree = "<group>"; };
+		65FEC7212C8FC0710067A2C5 /* PasswordsettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsettingView.swift; sourceTree = "<group>"; };
+		65FEC7242C8FC0960067A2C5 /* AreasettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreasettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +115,9 @@
 		651243232C788062008E798D /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				65FEC7232C8FC07F0067A2C5 /* Areasetting */,
+				65FEC7202C8FC04E0067A2C5 /* Passwordsetting */,
+				65FEC71D2C8FBFF50067A2C5 /* EmailAuthentication */,
 				6512EB622C7737D00044FDEE /* SignUpView.swift */,
 				651243272C7885D3008E798D /* SignUpViewModel.swift */,
 			);
@@ -113,6 +144,7 @@
 		651243262C78845C008E798D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				657C4E962C8AD71800FE63E1 /* component */,
 				651243292C7886CE008E798D /* Model */,
 				6512431E2C787F12008E798D /* Application */,
 				6512431B2C787EEE008E798D /* Feature */,
@@ -123,6 +155,7 @@
 		651243292C7886CE008E798D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				657C4E992C8AE2A800FE63E1 /* Response */,
 				6512432A2C7886D3008E798D /* Request */,
 			);
 			path = Model;
@@ -158,8 +191,8 @@
 			children = (
 				6512EB5A2C77363C0044FDEE /* Info.plist */,
 				651243262C78845C008E798D /* Sources */,
-				6512EB5B2C7737A00044FDEE /* SignUp+Login.swift */,
 				651243252C788448008E798D /* Resources */,
+				65FEC70A2C8F3A1F0067A2C5 /* Font */,
 			);
 			path = Finder;
 			sourceTree = "<group>";
@@ -170,6 +203,63 @@
 				6512EB532C7736180044FDEE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		657C4E962C8AD71800FE63E1 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				657C4E972C8AD72D00FE63E1 /* Textfield.swift */,
+				65FEC7072C8F25040067A2C5 /* ProgressBarView.swift */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		657C4E992C8AE2A800FE63E1 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				657C4E9A2C8AE2BC00FE63E1 /* TokenResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		65FEC70A2C8F3A1F0067A2C5 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				65FEC70B2C8F3A770067A2C5 /* Pretendard-Black.ttf */,
+				65FEC70F2C8F3A780067A2C5 /* Pretendard-Bold.ttf */,
+				65FEC7132C8F3A780067A2C5 /* Pretendard-ExtraBold.ttf */,
+				65FEC70D2C8F3A770067A2C5 /* Pretendard-ExtraLight.ttf */,
+				65FEC7112C8F3A780067A2C5 /* Pretendard-Light.ttf */,
+				65FEC7102C8F3A780067A2C5 /* Pretendard-Medium.ttf */,
+				65FEC7122C8F3A780067A2C5 /* Pretendard-Regular.ttf */,
+				65FEC70C2C8F3A770067A2C5 /* Pretendard-SemiBold.ttf */,
+				65FEC70E2C8F3A770067A2C5 /* Pretendard-Thin.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		65FEC71D2C8FBFF50067A2C5 /* EmailAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				65FEC71E2C8FC0380067A2C5 /* EmailAuthenticationView.swift */,
+			);
+			path = EmailAuthentication;
+			sourceTree = "<group>";
+		};
+		65FEC7202C8FC04E0067A2C5 /* Passwordsetting */ = {
+			isa = PBXGroup;
+			children = (
+				65FEC7212C8FC0710067A2C5 /* PasswordsettingView.swift */,
+			);
+			path = Passwordsetting;
+			sourceTree = "<group>";
+		};
+		65FEC7232C8FC07F0067A2C5 /* Areasetting */ = {
+			isa = PBXGroup;
+			children = (
+				65FEC7242C8FC0960067A2C5 /* AreasettingView.swift */,
+			);
+			path = Areasetting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,8 +326,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FEC7192C8F3A780067A2C5 /* Pretendard-Medium.ttf in Resources */,
+				65FEC7172C8F3A780067A2C5 /* Pretendard-Thin.ttf in Resources */,
+				65FEC71C2C8F3A780067A2C5 /* Pretendard-ExtraBold.ttf in Resources */,
+				65FEC71B2C8F3A780067A2C5 /* Pretendard-Regular.ttf in Resources */,
+				65FEC7152C8F3A780067A2C5 /* Pretendard-SemiBold.ttf in Resources */,
+				65FEC71A2C8F3A780067A2C5 /* Pretendard-Light.ttf in Resources */,
 				6512EB542C7736180044FDEE /* Preview Assets.xcassets in Resources */,
+				65FEC7162C8F3A780067A2C5 /* Pretendard-ExtraLight.ttf in Resources */,
 				6512EB512C7736180044FDEE /* Assets.xcassets in Resources */,
+				65FEC7142C8F3A780067A2C5 /* Pretendard-Black.ttf in Resources */,
+				65FEC7182C8F3A780067A2C5 /* Pretendard-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,10 +351,15 @@
 				6512EB632C7737D00044FDEE /* SignUpView.swift in Sources */,
 				6512EB672C7737F50044FDEE /* MainView.swift in Sources */,
 				6512432C2C7886E8008E798D /* SignUpRequest.swift in Sources */,
-				6512EB5C2C7737A00044FDEE /* SignUp+Login.swift in Sources */,
+				657C4E9B2C8AE2BC00FE63E1 /* TokenResponse.swift in Sources */,
+				65FEC7082C8F25040067A2C5 /* ProgressBarView.swift in Sources */,
+				657C4E982C8AD72D00FE63E1 /* Textfield.swift in Sources */,
+				65FEC71F2C8FC0380067A2C5 /* EmailAuthenticationView.swift in Sources */,
 				6512432E2C7889AD008E798D /* LoginViewModel.swift in Sources */,
 				6512EB652C7737DA0044FDEE /* LoginView.swift in Sources */,
 				651243282C7885D3008E798D /* SignUpViewModel.swift in Sources */,
+				65FEC7222C8FC0710067A2C5 /* PasswordsettingView.swift in Sources */,
+				65FEC7252C8FC0960067A2C5 /* AreasettingView.swift in Sources */,
 				6512EB4D2C7736170044FDEE /* FinderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
