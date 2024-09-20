@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LoginRequest: Encodable {
+struct LoginModel: Encodable {
 
     var email: String = ""
     var password: String = ""

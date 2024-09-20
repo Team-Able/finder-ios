@@ -10,9 +10,7 @@ struct SignupView: View {
     @State private var shouldNavigateToFirstView = false
     @State private var Error = false
     @Environment(\.dismiss) var dismiss
-    
-    
-    
+
     var body: some View {
         VStack {
             VStack {
@@ -29,11 +27,11 @@ struct SignupView: View {
                 Spacer()
                 
                 VStack(spacing: 10) {
-                    Textfield(image: .profil, text: "이메일을 입력하세요", posttext: $signupVM.request.email)
+                    Textfield(image: .profil, text: "이메일을 입력하세요", posttext: $signupVM.email)
                     
-                    Textfield(image: .profil, text: "닉네임을 입력해주세요", posttext: $signupVM.request.username)
+                    Textfield(image: .profil, text: "닉네임을 입력해주세요", posttext: $signupVM.username)
                     
-                    Textfield(image: .password, text: "비밀번호를 입력해주세요", posttext: $signupVM.request.password)
+                    Textfield(image: .password, text: "비밀번호를 입력해주세요", posttext: $signupVM.password)
                 }
                 
             }

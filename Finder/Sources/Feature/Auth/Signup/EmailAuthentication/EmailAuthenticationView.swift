@@ -22,9 +22,9 @@ struct EmailAuthenticationView: View {
             }
             .padding(.bottom,30)
             VStack {
-                Textfield(image: .profil, text: "이메일을 입력하세요.", posttext: $signupVM.request.email)
+                Textfield(image: .profil, text: "이메일을 입력하세요.", posttext: $signupVM.email)
                 
-                Textfield(image: .password, text: "인증번호를 입력하세요.", posttext: $signupVM.request.password)
+                Textfield(image: .password, text: "인증번호를 입력하세요.", posttext: $signupVM.password)
             }
             Spacer()
             Spacer()

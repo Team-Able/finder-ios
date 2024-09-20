@@ -2,20 +2,29 @@ import SwiftUI
 import Alamofire
 
 class SignUpViewModel: ObservableObject {
-    @Published var request: SignUpRequest = .init()
+    @Published var username: String = ""
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var checkpassword: String? = nil
     @Published var signuperrorMessage: String? = nil
     
     var isSignupDisabled: Bool {
-        request.email.isEmpty || request.password.isEmpty || request.password.isEmpty || request.username.isEmpty
+        email.isEmpty || password.isEmpty || password.isEmpty || username.isEmpty
     }
-        
+    
     func signUp() {
         let url = "http://finder.mcv.kr:8080/auth/signup"
         
-        AF.request(url,
-                   method: .post,
-                   parameters: request.signupparams,
-                   encoding: JSONEncoding.default)
+        AF.request(
+            url,
+            method: .post,
+            parameters: SignUpModel(
+                username: username,
+                email: email,
+                password: password
+            ),
+            encoder: JSONParameterEncoder.default
+        )
         .validate(statusCode: 200..<300)
         .response { response in
             switch response.result {

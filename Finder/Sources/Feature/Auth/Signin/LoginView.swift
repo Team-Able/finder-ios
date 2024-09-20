@@ -65,7 +65,7 @@ struct LoginView: View {
                         .font(.caption2)
                         .foregroundColor(.init(uiColor: .systemGray2))
                         .font(.custom("Pretendard-Regular", size: 13))
-                    NavigationLink(destination: EmailAuthenticationView()){
+                    NavigationLink(destination: SignupView()){
                         Text("회원가입")
                             .font(.caption2)
                             .foregroundColor(Color.maincolor)
@@ -77,7 +77,7 @@ struct LoginView: View {
                 Spacer()
                 Spacer()
                     .navigationDestination(isPresented: $loginVM.islogin) {
-                        EmailAuthenticationView()
+                        MainView()
                     }
                 
             }

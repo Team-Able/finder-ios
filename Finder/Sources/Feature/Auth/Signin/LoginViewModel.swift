@@ -19,7 +19,7 @@ class LoginViewModel: ObservableObject {
         AF.request(
             url,
             method: .post,
-            parameters: LoginRequest(
+            parameters: LoginModel(
                 email: email,
                 password: password
             ),
@@ -34,7 +34,6 @@ class LoginViewModel: ObservableObject {
                 UserDefaults.standard.setValue(result.accessToken, forKey: "accessToken")
                 UserDefaults.standard.setValue(result.refreshToken, forKey: "refreshToken")
                 print(res)
-                // 메
             case .failure(let error):
                 print("실패")
                 self.loginerrorMessage = "예상치 못한 오류가 발생했습니다."
