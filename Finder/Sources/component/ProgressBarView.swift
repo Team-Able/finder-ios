@@ -24,29 +24,3 @@ struct ProgressBar: View {
 #Preview {
     ProgressBar()
 }
-
-
-
-//struct ContentView: View {
-//
-//    var body: some View {
-//        VStack {
-//            ProgressBar(progress: progress)
-//                .frame(height: 6) // 진행 표시 바 높이
-//
-////            Button("Increase Progress") {
-////                if progress < 1.0 {
-////                    progress += 0.35
-////                }
-////            }
-//            .padding()
-//        }
-//        .padding()
-//    }
-//}
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}

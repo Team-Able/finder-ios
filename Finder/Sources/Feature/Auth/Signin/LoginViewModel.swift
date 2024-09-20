@@ -10,7 +10,9 @@ class LoginViewModel: ObservableObject {
     
     
     var isLoginDisabled: Bool {
-        email.isEmpty || password.isEmpty
+        email.isEmpty || password.isEmpty ||
+        password.count < 8 || password.count > 32 ||
+        !checkEmail(str: email)
     }
     
     func login() {
@@ -23,21 +25,28 @@ class LoginViewModel: ObservableObject {
                 email: email,
                 password: password
             ),
-            encoder: JSONParameterEncoder()
+            encoder: JSONParameterEncoder.default
         )
         .validate(statusCode: 200..<300)
         .responseDecodable(of: TokenResponse.self) { res in
             switch res.result {
             case .success(let result):
-                // 저장
                 self.loginerrorMessage = nil
-                UserDefaults.standard.setValue(result.accessToken, forKey: "accessToken")
-                UserDefaults.standard.setValue(result.refreshToken, forKey: "refreshToken")
+                func accesstoken() {
+                    UserDefaults.standard.setValue(result.accessToken, forKey: "accessToken")
+                }
+                func refreshtoken() {
+                    UserDefaults.standard.setValue(result.refreshToken, forKey: "refreshToken")
+                }
                 print(res)
             case .failure(let error):
                 print("실패")
                 self.loginerrorMessage = "예상치 못한 오류가 발생했습니다."
             }
         }
+    }
+    func checkEmail(str: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
     }
 }

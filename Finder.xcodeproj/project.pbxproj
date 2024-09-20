@@ -106,8 +106,8 @@
 		651243222C78803B008E798D /* Signin */ = {
 			isa = PBXGroup;
 			children = (
-				6512EB642C7737DA0044FDEE /* LoginView.swift */,
 				6512432D2C7889AD008E798D /* LoginViewModel.swift */,
+				6512EB642C7737DA0044FDEE /* LoginView.swift */,
 			);
 			path = Signin;
 			sourceTree = "<group>";
@@ -115,11 +115,11 @@
 		651243232C788062008E798D /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				651243272C7885D3008E798D /* SignUpViewModel.swift */,
+				6512EB622C7737D00044FDEE /* SignUpView.swift */,
 				65FEC7232C8FC07F0067A2C5 /* Areasetting */,
 				65FEC7202C8FC04E0067A2C5 /* Passwordsetting */,
 				65FEC71D2C8FBFF50067A2C5 /* EmailAuthentication */,
-				6512EB622C7737D00044FDEE /* SignUpView.swift */,
-				651243272C7885D3008E798D /* SignUpViewModel.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";

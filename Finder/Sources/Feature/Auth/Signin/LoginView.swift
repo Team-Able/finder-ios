@@ -2,13 +2,12 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @ObservedObject var loginVM: LoginViewModel = .init()
-    
+    @StateObject var loginVM: LoginViewModel = .init()
     @State private var showPassword = false
     @State private var isalert = false
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Spacer()
                 VStack {
@@ -32,7 +31,6 @@ struct LoginView: View {
                 .padding(.bottom,30)
                 VStack {
                     Button {
-                        loginVM.login()
                         isalert = true
                     } label: {
                         Text("로그인")
@@ -76,10 +74,9 @@ struct LoginView: View {
                 .padding(.top,3)
                 Spacer()
                 Spacer()
-                    .navigationDestination(isPresented: $loginVM.islogin) {
-                        MainView()
-                    }
-                
+            }
+            .navigationDestination(isPresented: $loginVM.islogin) {
+                MainView()
             }
         }
         .navigationBarBackButtonHidden(true)

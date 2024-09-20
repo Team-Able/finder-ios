@@ -14,10 +14,17 @@ struct Textfield: View {
     
     var body: some View {
         HStack {
-            Image(uiImage: image)
-                .resizable()
-                .frame(width: 20, height: 20)
-                .padding(.leading, 12)
+            if image == .password {
+                Image(uiImage: image)
+                    .resizable()
+                    .frame(width: 20, height: 25)
+                    .padding(.leading, 12)
+            } else {
+                Image(uiImage: image)
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .padding(.leading, 12)
+            }
             
             TextField(text, text: $posttext)
                 .font(.system(size: 15))
