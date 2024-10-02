@@ -7,6 +7,7 @@ class SignUpViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var checkpassword: String? = nil
     @Published var signuperrorMessage: String? = nil
+    let serverUrl = ServerUrl()
     
     var isSignupDisabled: Bool {
         email.isEmpty || password.isEmpty || username.isEmpty ||
@@ -16,7 +17,7 @@ class SignUpViewModel: ObservableObject {
     }
     
     func signUp() {
-        let url = "http://finder.mcv.kr:8080/auth/signup"
+        let url = serverUrl.getUrl(for: "/auth/signup")
         
         AF.request(
             url,

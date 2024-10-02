@@ -7,7 +7,11 @@ class LoginViewModel: ObservableObject {
     @Published var password = ""
     @Published var loginerrorMessage: String? = nil
     @Published var islogin = false
+    let serverUrl = ServerUrl()
     
+    init() {
+        checkIfLoggedIn()
+    }
     
     var isLoginDisabled: Bool {
         email.isEmpty || password.isEmpty ||
@@ -16,7 +20,7 @@ class LoginViewModel: ObservableObject {
     }
     
     func login() {
-        let url = "http://finder.mcv.kr:8080/auth/login"
+        let url = serverUrl.getUrl(for: "/auth/login")
         
         AF.request(
             url,
@@ -39,6 +43,7 @@ class LoginViewModel: ObservableObject {
                     UserDefaults.standard.setValue(result.refreshToken, forKey: "refreshToken")
                 }
                 print(res)
+                self.islogin = true
             case .failure(let error):
                 print("실패")
                 self.loginerrorMessage = "예상치 못한 오류가 발생했습니다."
@@ -48,5 +53,13 @@ class LoginViewModel: ObservableObject {
     func checkEmail(str: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
+    }
+    
+    func checkIfLoggedIn() {
+        if let save = UserDefaults.standard.string(forKey: "accessToken") {
+            self.islogin = true
+        } else {
+            self.islogin = false
+        }
     }
 }
