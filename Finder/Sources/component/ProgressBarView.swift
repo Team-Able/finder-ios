@@ -14,7 +14,7 @@ struct ProgressBar: View {
             
             Rectangle()
                 .frame(width: 180 * progress, height: 8)
-                .foregroundColor(Color.maincolor)
+                .foregroundColor(Color.textfield)
                 .animation(.linear, value: progress)
         }
         .cornerRadius(3)

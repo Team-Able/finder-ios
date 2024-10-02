@@ -37,7 +37,7 @@ struct Textfield: View {
         .frame(width: 300, height: 50)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(posttext.isEmpty ? Color.init(uiColor: .systemGray4) : Color.maincolor , lineWidth: 1)
+                .stroke(posttext.isEmpty ? Color.init(uiColor: .systemGray4) : Color.textfield , lineWidth: 1)
         )
         .padding(.vertical, 2)
     }
