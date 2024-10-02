@@ -24,7 +24,7 @@ struct EmailAuthenticationView: View {
             VStack {
                 Textfield(image: .profil, text: "이메일을 입력하세요.", posttext: $signupVM.email)
                 
-                Textfield(image: .password, text: "인증번호를 입력하세요.", posttext: $signupVM.password)
+                CustomSecureField(image: .password, text: "인증번호를 입력하세요.", posttext: $signupVM.password)
             }
             Spacer()
             Spacer()

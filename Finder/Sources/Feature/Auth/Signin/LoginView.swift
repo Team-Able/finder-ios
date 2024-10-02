@@ -25,7 +25,7 @@ struct LoginView: View {
                     Textfield(image: .profil, text: "이메일을 입력하세요", posttext: $loginVM.email)
                         .padding(.vertical,4)
                     
-                    Textfield(image: .password, text: "비밀번호를 입력해주세요", posttext: $loginVM.password)
+                    CustomSecureField(image: .password, text: "비밀번호를 입력해주세요", posttext: $loginVM.password)
                     
                 }
                 .padding(.bottom,30)
