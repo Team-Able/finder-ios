@@ -30,14 +30,14 @@ struct Textfield: View {
                 .font(.system(size: 15))
                 .padding(.leading, 11)
                 .frame(height: 50)
-                .tint(.maincolor)
+                .tint(.primary500)
                 .font(.custom("Pretendard-Regular", size: 14))
         }
         .background(Color.backgroundcolor)
         .frame(width: 300, height: 50)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(posttext.isEmpty ? Color.init(uiColor: .systemGray4) : Color.textfield , lineWidth: 1)
+                .stroke(posttext.isEmpty ? Color.init(uiColor: .systemGray4) : Color.primary500 , lineWidth: 1)
         )
         .padding(.vertical, 2)
     }

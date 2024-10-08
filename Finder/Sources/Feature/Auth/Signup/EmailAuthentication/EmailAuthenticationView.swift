@@ -11,20 +11,21 @@ import SwiftUI
 struct EmailAuthenticationView: View {
     @StateObject var signupVM: SignUpViewModel = .init()
     @Environment(\.dismiss) var dismiss
+    var isAble: Bool {
+        signupVM.checkEmail(str: signupVM.email) != true
+    }
     var body: some View {
         VStack {
             Spacer()
             HStack {
-                Text("이메일 입력 후,\n인증을 진행해 주세요")
-                    .font(.custom("Pretendard-SemiBold", size: 22))
+                Text("이메일을 입력해주세요")
+                    .font(.bold(22))
                     .padding(.leading,48)
                 Spacer()
             }
             .padding(.bottom,30)
             VStack {
                 Textfield(image: .profil, text: "이메일을 입력하세요.", posttext: $signupVM.email)
-                
-                CustomSecureField(image: .password, text: "인증번호를 입력하세요.", posttext: $signupVM.password)
             }
             Spacer()
             Spacer()
@@ -32,31 +33,22 @@ struct EmailAuthenticationView: View {
             Spacer()
             NavigationLink(destination: PasswordsettingView()) {
                 Text("다음")
-                    .font(.custom("Pretendard-SemiBold", size: 22))
+                    .font(.bold(22))
                     .foregroundColor(.white)
                     .frame(width: 330, height: 60)
-                    .background(signupVM.isSignupDisabled ? Color.init(uiColor: .systemGray4) : Color.maincolor)
+                    .background(isAble ? Color.init(uiColor: .systemGray4) : .primary500)
                     .cornerRadius(13)
                     .padding(15)
             }
-            .disabled(signupVM.isSignupDisabled)
+            .disabled(isAble)
         }
         Spacer()
-            .navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden()
+        BackButton()
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        HStack {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.black)
-                                .bold()
-                        }
-                    }
-                }
-                ToolbarItem(placement: .navigation) {
-                    ProgressBar()
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    ProgressBar(progress: .two)
+                        .padding(.trailing,155)
                 }
             }
     }

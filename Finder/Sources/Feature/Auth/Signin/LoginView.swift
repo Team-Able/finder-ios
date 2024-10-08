@@ -15,8 +15,8 @@ struct LoginView: View {
                         .resizable()
                         .frame(width: 250,height: 90)
                     Text("찾았다!")
-                        .font(.custom("Pretendard-Regular", size: 15))
-                        .foregroundColor(.maincolor)
+                        .font(.regular(15))
+                        .foregroundColor(.primary500)
                         .bold()
                         .padding(.bottom,40)
                 }
@@ -34,11 +34,11 @@ struct LoginView: View {
                         isalert = true
                     } label: {
                         Text("로그인")
-                            .font(.custom("Pretendard-SemiBold", size: 20))
+                            .font(.bold(20))
                             .bold()
                             .foregroundColor(.white)
                             .frame(width: 313,height: 55)
-                            .background(loginVM.isLoginDisabled ? Color.init(uiColor: .systemGray4) : Color.maincolor)
+                            .background(loginVM.isLoginDisabled ? Color.init(uiColor: .systemGray4) : Color.primary500)
                             .cornerRadius(13)
                             .bold()
                     }
@@ -62,12 +62,12 @@ struct LoginView: View {
                     Text("계정이 없으신가요?")
                         .font(.caption2)
                         .foregroundColor(.init(uiColor: .systemGray2))
-                        .font(.custom("Pretendard-Regular", size: 13))
-                    NavigationLink(destination: SignupView()){
+                        .font(.regular(13))
+                    NavigationLink(destination: PermitView()){
                         Text("회원가입")
                             .font(.caption2)
-                            .foregroundColor(Color.maincolor)
-                            .font(.custom("Pretendard-Regular", size: 13))
+                            .foregroundColor(.primary800)
+                            .font(.regular(13))
                     }
                 }
                 .padding(.leading,160)
@@ -75,11 +75,11 @@ struct LoginView: View {
                 Spacer()
                 Spacer()
             }
-            .navigationDestination(isPresented: $loginVM.islogin) {
-                MainView()
-            }
+//            .navigationDestination(isPresented: $loginVM.islogin) {
+//                MainView()
+//            }
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden()
     }
 }
 

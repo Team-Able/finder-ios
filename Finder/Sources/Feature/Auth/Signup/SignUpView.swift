@@ -10,7 +10,7 @@ struct SignupView: View {
     @State private var gotofirstview = false
     @State private var Error = false
     @Environment(\.dismiss) var dismiss
-
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -19,7 +19,7 @@ struct SignupView: View {
                     VStack {
                         VStack {
                             Text("회원가입을 위해 정보를 \n입력해주세요.")
-                                .font(.system(size: 22))
+                                .font(.bold(22))
                                 .bold()
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.leading,50)
@@ -49,7 +49,7 @@ struct SignupView: View {
                             .bold()
                             .foregroundColor(.white)
                             .frame(width: 330, height: 60)
-                            .background(signupVM.isSignupDisabled ? Color.init(uiColor: .systemGray4) : Color.maincolor)
+                            .background(signupVM.isSignupDisabled ? Color.init(uiColor: .systemGray4) : Color.primary500)
                             .cornerRadius(13)
                             .padding(15)
                     }
@@ -73,27 +73,14 @@ struct SignupView: View {
                 }
             }
         }
-        .padding()
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    dismiss()
-                }) {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
-                            .bold()
-                    }
+        .navigationBarBackButtonHidden()
+        BackButton()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    ProgressBar(progress: .two)
+                        .padding(.trailing,155)
                 }
             }
-            
-            ToolbarItem(placement: .navigationBarTrailing) {
-                ProgressBar()
-                    .padding(.trailing,90)
-            }
-        }
-
     }
 }
 
