@@ -32,7 +32,7 @@ struct SignupView: View {
                         
                         Textfield(image: .profil, text: "닉네임을 입력해주세요 3자이상", posttext: $signupVM.username)
                         
-                        Textfield(image: .password, text: "비밀번호를 입력해주세요 8자 이상", posttext: $signupVM.password)
+                        CustomSecureField(image: .password, text: "비밀번호를 입력해주세요 8자 이상", posttext: $signupVM.password)
                     }
                     
                 }

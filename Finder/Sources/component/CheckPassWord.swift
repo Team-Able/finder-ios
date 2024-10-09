@@ -1,37 +1,36 @@
 //
-//  Textfield.swift
+//  CheckPassWord.swift
 //  Finder
 //
-//  Created by dgsw30 on 9/6/24.
+//  Created by dgsw30 on 10/9/24.
 //
 
 import SwiftUI
 
-struct Textfield: View {
-    let image: UIImage
+struct CheckPassWord: View {
     let text: String
+    let check: Bool
     @Binding var posttext: String
-    
     var body: some View {
         HStack {
-            if image == .password {
-                Image(uiImage: image)
-                    .resizable()
-                    .frame(width: 20, height: 25)
-                    .padding(.leading, 12)
-            } else {
-                Image(uiImage: image)
+            Image(.password)
                     .resizable()
                     .frame(width: 20, height: 20)
                     .padding(.leading, 12)
-            }
             
-            TextField(text, text: $posttext)
+            SecureField(text, text: $posttext)
                 .font(.system(size: 15))
                 .padding(.leading, 11)
                 .frame(height: 50)
                 .tint(.primary500)
                 .font(.custom("Pretendard-Regular", size: 14))
+            
+            if check == true {
+                Image(.checkmark)
+                    .resizable()
+                    .frame(width: 22,height: 24)
+                    .padding(.trailing, 12)
+            }
             
         }
         .background(Color.backgroundcolor)

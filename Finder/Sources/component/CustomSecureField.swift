@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomSecureField: View {
+    @State private var showPassword = false
     let image: UIImage
     let text: String
     @Binding var posttext: String
@@ -25,13 +26,31 @@ struct CustomSecureField: View {
                     .frame(width: 20, height: 20)
                     .padding(.leading, 12)
             }
+            if showPassword == true {
+                TextField(text, text: $posttext)
+                    .font(.system(size: 15))
+                    .padding(.leading, 11)
+                    .frame(height: 50)
+                    .tint(.primary500)
+                    .font(.custom("Pretendard-Regular", size: 14))
+            } else {
+                SecureField(text, text: $posttext)
+                    .font(.system(size: 15))
+                    .padding(.leading, 11)
+                    .frame(height: 50)
+                    .tint(.primary500)
+                    .font(.custom("Pretendard-Regular", size: 14))
+            }
             
-            SecureField(text, text: $posttext)
-                .font(.system(size: 15))
-                .padding(.leading, 11)
-                .frame(height: 50)
-                .tint(.primary500)
-                .font(.custom("Pretendard-Regular", size: 14))
+            Button {
+                showPassword.toggle()
+            } label: {
+                Image(systemName: showPassword ? "eye.slash" : "eye")
+                    .foregroundColor(.gray)
+                    .padding(.trailing, 12)
+            }
+            .buttonStyle(PlainButtonStyle())
+
         }
         .background(Color.backgroundcolor)
         .frame(width: 300, height: 50)

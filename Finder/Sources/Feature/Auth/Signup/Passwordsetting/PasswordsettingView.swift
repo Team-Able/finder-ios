@@ -9,8 +9,55 @@
 import SwiftUI
 
 struct PasswordsettingView: View {
+    @StateObject var passWordVM: SignUpViewModel = .init()
+    @State private var checkPassWord = ""
+    @State private var check = false
+    var passwordDisabled: Bool {
+        passWordVM.password.count < 8 || passWordVM.password.count > 32 || checkPassWordBolean == false
+    }
+    var checkPassWordBolean: Bool {
+        passWordVM.password == checkPassWord && !checkPassWord.isEmpty
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Spacer()
+            HStack {
+                Text("비밀번호를 설정해 주세요")
+                    .font(.bold(22))
+                    .padding(.leading,48)
+                Spacer()
+            }
+            .padding(.bottom,30)
+            VStack {
+                CustomSecureField(image: .password, text: "비밀번호를 입력하세요", posttext: $passWordVM.password)
+                
+                CheckPassWord(text: "비밀번호를 재입력해주세요", check: checkPassWordBolean, posttext: $checkPassWord)
+            }
+            Spacer()
+            Spacer()
+            Spacer()
+            Spacer()
+            NavigationLink(destination: AreasettingView()) {
+                Text("다음")
+                    .font(.bold(22))
+                    .foregroundColor(.white)
+                    .frame(width: 330, height: 60)
+                    .background(passwordDisabled ? Color.init(uiColor: .systemGray4) : .primary500)
+                    .cornerRadius(13)
+                    .padding(15)
+            }
+            .disabled(passwordDisabled)
+        }
+        Spacer()
+            .navigationBarBackButtonHidden()
+        BackButton()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    ProgressBar(progress: .three)
+                        .padding(.trailing,155)
+                }
+            }
     }
 }
 
