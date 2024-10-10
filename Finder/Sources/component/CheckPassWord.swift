@@ -28,8 +28,8 @@ struct CheckPassWord: View {
             if check == true {
                 Image(.checkmark)
                     .resizable()
-                    .frame(width: 22,height: 24)
-                    .padding(.trailing, 12)
+                    .frame(width: 16,height: 18)
+                    .padding(.trailing, 14)
             }
             
         }
