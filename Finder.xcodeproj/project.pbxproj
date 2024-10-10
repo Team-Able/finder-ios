@@ -147,8 +147,8 @@
 		651243232C788062008E798D /* Signup */ = {
 			isa = PBXGroup;
 			children = (
-				65770E582CB5197200A9E9D8 /* Terms */,
 				651243272C7885D3008E798D /* SignUpViewModel.swift */,
+				65770E582CB5197200A9E9D8 /* Terms */,
 				65FEC7232C8FC07F0067A2C5 /* UserNameSetting */,
 				65FEC71D2C8FBFF50067A2C5 /* EmailSetting */,
 				65FEC7202C8FC04E0067A2C5 /* PasswordSetting */,

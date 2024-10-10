@@ -40,6 +40,7 @@ struct UserNameSettingView: View {
                     .cornerRadius(13)
                     .padding(15)
             }
+            .disabled(isAble)
         }
         Spacer()
             .navigationBarBackButtonHidden()
