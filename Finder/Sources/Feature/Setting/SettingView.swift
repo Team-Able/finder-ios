@@ -1,6 +1,7 @@
+//MARK: 이름수정
 import SwiftUI
 
-struct MainView: View {
+struct SettingView: View {
     @EnvironmentObject var viewModel: LoginViewModel
     @State private var toFirst = false
 
@@ -17,6 +18,7 @@ struct MainView: View {
                 .environmentObject(viewModel)
         }
         .navigationBarBackButtonHidden()
+        BackButton()
     }
     
     func logout() {

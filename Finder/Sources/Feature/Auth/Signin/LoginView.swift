@@ -76,7 +76,7 @@ struct LoginView: View {
                 Spacer()
             }
             .navigationDestination(isPresented: $loginVM.islogin) {
-                MainView()
+                TabView()
                     .environmentObject(loginVM)
             }
         }

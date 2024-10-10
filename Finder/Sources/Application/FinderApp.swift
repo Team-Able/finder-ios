@@ -7,7 +7,7 @@ struct FinderApp: App {
     var body: some Scene {
         WindowGroup {
             if viewModel.islogin {
-                MainView()
+                TabView()
                     .environmentObject(viewModel)
             } else {
                 LoginView()
