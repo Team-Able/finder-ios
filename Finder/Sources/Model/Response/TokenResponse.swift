@@ -1,13 +1,11 @@
-//
-//  TokenResponse.swift
-//  Finder
-//
-//  Created by dgsw30 on 9/6/24.
-//
+struct TokenResponse: Codable {
+    let data: TokenData
+    let status: Int
+    let message: String
+}
 
-import Foundation
-
-struct TokenResponse: Decodable {
+struct TokenData: Codable {
     let accessToken: String
     let refreshToken: String
 }
+

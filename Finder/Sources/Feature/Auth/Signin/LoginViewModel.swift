@@ -5,13 +5,9 @@ class LoginViewModel: ObservableObject {
     // 스크래치처럼 값을 방송해서 보냄
     @Published var email = ""
     @Published var password = ""
-    @Published var loginerrorMessage: String? = nil
+    @Published var loginerrorMessage: String?
     @Published var islogin = false
     let serverUrl = ServerUrl()
-    
-    init() {
-        checkIfLoggedIn()
-    }
     
     var isLoginDisabled: Bool {
         email.isEmpty || password.isEmpty ||
@@ -36,30 +32,18 @@ class LoginViewModel: ObservableObject {
             switch res.result {
             case .success(let result):
                 self.loginerrorMessage = nil
-                func accesstoken() {
-                    UserDefaults.standard.setValue(result.accessToken, forKey: "accessToken")
-                }
-                func refreshtoken() {
-                    UserDefaults.standard.setValue(result.refreshToken, forKey: "refreshToken")
-                }
-                print(res)
-                self.islogin = true
+                UserDefaults.standard.set(result.data.accessToken, forKey: "accessToken")
+                UserDefaults.standard.set(result.data.refreshToken, forKey: "refreshToken")
+                print("성공")
             case .failure(let error):
-                print("실패")
-                self.loginerrorMessage = "예상치 못한 오류가 발생했습니다."
+                self.loginerrorMessage = "이메일과 비밀번호를 다시 입력해주세요."
+                self.islogin = false
+                print("실패: \(error.localizedDescription)")
             }
         }
     }
     func checkEmail(str: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
-    }
-    
-    func checkIfLoggedIn() {
-        if let save = UserDefaults.standard.string(forKey: "accessToken") {
-            self.islogin = true
-        } else {
-            self.islogin = false
-        }
     }
 }

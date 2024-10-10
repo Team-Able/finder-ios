@@ -31,6 +31,7 @@ struct LoginView: View {
                 .padding(.bottom,30)
                 VStack {
                     Button {
+                        loginVM.login()
                         isalert = true
                     } label: {
                         Text("로그인")
@@ -57,7 +58,6 @@ struct LoginView: View {
                         }
                     }
                 }
-
                 HStack {
                     Text("계정이 없으신가요?")
                         .font(.caption2)
@@ -75,9 +75,10 @@ struct LoginView: View {
                 Spacer()
                 Spacer()
             }
-//            .navigationDestination(isPresented: $loginVM.islogin) {
-//                MainView()
-//            }
+            .navigationDestination(isPresented: $loginVM.islogin) {
+                MainView()
+                    .environmentObject(loginVM)
+            }
         }
         .navigationBarBackButtonHidden()
     }
