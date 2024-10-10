@@ -8,8 +8,8 @@
 //TODO: 비밀번호설정뷰
 import SwiftUI
 
-struct PasswordsettingView: View {
-    @StateObject var passWordVM: SignUpViewModel = .init()
+struct PasswordSettingView: View {
+    @ObservedObject var passWordVM: SignUpViewModel = .init()
     @State private var checkPassWord = ""
     @State private var check = false
     var passwordDisabled: Bool {
@@ -30,7 +30,7 @@ struct PasswordsettingView: View {
             }
             .padding(.bottom,30)
             VStack {
-                CustomSecureField(image: .password, text: "비밀번호를 입력하세요", posttext: $passWordVM.password)
+                CustomSecureField(image: .password, text: "비밀번호를 입력해주세요 8자", posttext: $passWordVM.password)
                 
                 CheckPassWord(text: "비밀번호를 재입력해주세요", check: checkPassWordBolean, posttext: $checkPassWord)
             }
@@ -38,7 +38,7 @@ struct PasswordsettingView: View {
             Spacer()
             Spacer()
             Spacer()
-            NavigationLink(destination: AreasettingView()) {
+            NavigationLink(destination: SettingDoneView(signupVM: passWordVM)) {
                 Text("다음")
                     .font(.bold(22))
                     .foregroundColor(.white)
@@ -54,7 +54,7 @@ struct PasswordsettingView: View {
         BackButton()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    ProgressBar(progress: .three)
+                    ProgressBar(progress: .four)
                         .padding(.trailing,155)
                 }
             }
@@ -62,5 +62,5 @@ struct PasswordsettingView: View {
 }
 
 #Preview {
-    PasswordsettingView()
+    PasswordSettingView()
 }

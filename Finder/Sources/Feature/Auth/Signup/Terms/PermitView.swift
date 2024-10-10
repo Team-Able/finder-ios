@@ -77,7 +77,7 @@ struct PermitView: View {
                 .padding(.leading,40)
             }
             Spacer()
-            NextButton(destination: EmailAuthenticationView(), isEnabled: acceptAllow)
+            NextButton(destination: UserNameSettingView(), isEnabled: acceptAllow)
         }
         .padding(.top,144)
         .navigationBarBackButtonHidden()

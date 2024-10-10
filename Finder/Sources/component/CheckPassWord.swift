@@ -15,7 +15,7 @@ struct CheckPassWord: View {
         HStack {
             Image(.password)
                     .resizable()
-                    .frame(width: 20, height: 20)
+                    .frame(width: 20, height: 25)
                     .padding(.leading, 12)
             
             SecureField(text, text: $posttext)

@@ -36,7 +36,7 @@ class SignUpViewModel: ObservableObject {
                 print("성공")
                 self.signuperrorMessage = nil
             case .failure(let error):
-                print("실패")
+                print(error)
                 self.signuperrorMessage = "예상치 못한 오류가 발생했습니다."
             }
         }

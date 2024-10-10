@@ -8,11 +8,10 @@
 //TODO: 이메일인증뷰
 import SwiftUI
 
-struct EmailAuthenticationView: View {
-    @StateObject var signupVM: SignUpViewModel = .init()
-    @Environment(\.dismiss) var dismiss
+struct EmailSettingView: View {
+    @ObservedObject var emialVM: SignUpViewModel = .init()
     var isAble: Bool {
-        signupVM.checkEmail(str: signupVM.email) != true
+        emialVM.checkEmail(str: emialVM.email) != true
     }
     var body: some View {
         VStack {
@@ -25,13 +24,13 @@ struct EmailAuthenticationView: View {
             }
             .padding(.bottom,30)
             VStack {
-                Textfield(image: .profil, text: "이메일을 입력하세요.", posttext: $signupVM.email)
+                Textfield(image: .profil, text: "이메일을 입력하세요.", posttext: $emialVM.email)
             }
             Spacer()
             Spacer()
             Spacer()
             Spacer()
-            NavigationLink(destination: PasswordsettingView()) {
+            NavigationLink(destination: PasswordSettingView(passWordVM: emialVM)) {
                 Text("다음")
                     .font(.bold(22))
                     .foregroundColor(.white)
@@ -47,7 +46,7 @@ struct EmailAuthenticationView: View {
         BackButton()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    ProgressBar(progress: .two)
+                    ProgressBar(progress: .three)
                         .padding(.trailing,155)
                 }
             }
@@ -55,5 +54,5 @@ struct EmailAuthenticationView: View {
 }
 
 #Preview {
-    EmailAuthenticationView()
+    EmailSettingView()
 }
