@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ProgressBar: View {
-    enum Progresscolor {
+    enum ProgressColor {
         case one
         case two
         case three
@@ -20,7 +20,7 @@ struct ProgressBar: View {
             }
         }
     }
-    var progress: Progresscolor
+    var progress: ProgressColor
     var body: some View {
         HStack {
             ForEach(0..<4) { index in

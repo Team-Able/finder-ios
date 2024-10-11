@@ -2,27 +2,16 @@ import SwiftUI
 
 @main
 struct FinderApp: App {
-    @StateObject var viewModel = LoginViewModel()
+    @AppStorage("accessToken")
+    private var accessToken: String?
     
     var body: some Scene {
         WindowGroup {
-            if viewModel.islogin {
-                TabView()
-                    .environmentObject(viewModel)
-            } else {
+            if accessToken == nil {
                 LoginView()
-                    .environmentObject(viewModel)
-                    .onAppear {
-                        checkLoginStatus()
-                    }
+            } else {
+                CustomTabView()
             }
-        }
-    }
-    private func checkLoginStatus() {
-        if let accessToken = UserDefaults.standard.string(forKey: "accessToken") {
-            viewModel.islogin = true
-        } else {
-            viewModel.islogin = false
         }
     }
 }

@@ -4,8 +4,8 @@ struct LoginView: View {
     
     @StateObject var loginVM: LoginViewModel = .init()
     @State private var showPassword = false
-    @State private var isalert = false
-
+    @State private var isAlert = false
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -25,14 +25,14 @@ struct LoginView: View {
                     Textfield(image: .profil, text: "이메일을 입력하세요", posttext: $loginVM.email)
                         .padding(.vertical,4)
                     
-                    CustomSecureField(image: .password, text: "비밀번호를 입력해주세요", posttext: $loginVM.password)
+                    CustomSecureField(image: .password, text: "비밀번호를 입력해주세요", postText: $loginVM.password)
                     
                 }
-                .padding(.bottom,30)
+                .padding(.bottom, 30)
                 VStack {
                     Button {
                         loginVM.login()
-                        isalert = true
+                        isAlert = loginVM.loginerrorMessage != nil
                     } label: {
                         Text("로그인")
                             .font(.bold(20))
@@ -44,18 +44,10 @@ struct LoginView: View {
                             .bold()
                     }
                     .disabled(loginVM.isLoginDisabled)
-                    .alert(isPresented: $isalert) {
-                        if let loginerrorMessage = loginVM.loginerrorMessage {
-                            return Alert(title: Text("로그인 실패"),
-                                         message: Text(loginerrorMessage),
-                                         dismissButton: .default(Text("확인")))
-                        } else {
-                            return Alert(title: Text("로그인 성공"),
-                                         message: Text("환영합니다!"),
-                                         dismissButton: .default(Text("확인")) {
-                                loginVM.islogin = true
-                            })
-                        }
+                    .alert(isPresented: $isAlert) {
+                        Alert(title: Text("로그인 실패"),
+                              message: Text(loginVM.loginerrorMessage ?? "알 수 없는 오류입니다."),
+                              dismissButton: .default(Text("확인")))
                     }
                 }
                 HStack {
@@ -74,10 +66,6 @@ struct LoginView: View {
                 .padding(.top,3)
                 Spacer()
                 Spacer()
-            }
-            .navigationDestination(isPresented: $loginVM.islogin) {
-                TabView()
-                    .environmentObject(loginVM)
             }
         }
         .navigationBarBackButtonHidden()

@@ -7,7 +7,7 @@ class SignUpViewModel: ObservableObject {
     @Published var password: String = ""
     @Published var checkpassword: String? = nil
     @Published var signuperrorMessage: String? = nil
-    let serverUrl = ServerUrl()
+    let serverUrl = ServerUrl.shared
     
     var isSignupDisabled: Bool {
         email.isEmpty || password.isEmpty || username.isEmpty ||
@@ -44,6 +44,6 @@ class SignUpViewModel: ObservableObject {
     
     func checkEmail(str: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
     }
 }

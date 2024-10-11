@@ -6,8 +6,7 @@ class LoginViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var loginerrorMessage: String?
-    @Published var islogin = false
-    let serverUrl = ServerUrl()
+    let serverUrl = ServerUrl.shared
     
     var isLoginDisabled: Bool {
         email.isEmpty || password.isEmpty ||
@@ -28,7 +27,7 @@ class LoginViewModel: ObservableObject {
             encoder: JSONParameterEncoder.default
         )
         .validate(statusCode: 200..<300)
-        .responseDecodable(of: TokenResponse.self) { res in
+        .responseDecodable(of: BaseResponse<TokenData>.self) { res in // 처리한거 변환
             switch res.result {
             case .success(let result):
                 self.loginerrorMessage = nil
@@ -37,13 +36,12 @@ class LoginViewModel: ObservableObject {
                 print("성공")
             case .failure(let error):
                 self.loginerrorMessage = "이메일과 비밀번호를 다시 입력해주세요."
-                self.islogin = false
                 print("실패: \(error.localizedDescription)")
             }
         }
     }
     func checkEmail(str: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
     }
 }

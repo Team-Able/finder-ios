@@ -4,12 +4,11 @@
 //
 //  Created by dgsw30 on 10/10/24.
 //
-
+//MARK: 이거 도담 코드보고 수정
 import SwiftUI
 
-struct TabView: View {
+struct CustomTabView: View {
     @State private var selectedtab: TabViewType = .home
-    @EnvironmentObject var viewModel: LoginViewModel
     var body: some View {
         NavigationStack {
             VStack {
@@ -19,8 +18,7 @@ struct TabView: View {
                     case .search:
                         SearchView()
                     case .home:
-                        MainHomeView()
-                            .environmentObject(viewModel)
+                        HomeView()
                     case .write:
                         WriteView()
                     }
@@ -54,8 +52,8 @@ struct TabView: View {
         }
     }
 }
-//
-//#Preview {
-//    TabView()
-//        .environmentObject(LoginViewModel())
-//}
+
+#Preview {
+    CustomTabView()
+        .environmentObject(LoginViewModel())
+}

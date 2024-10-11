@@ -33,9 +33,17 @@ struct PermitView: View {
                     .cornerRadius(14)
                 HStack {
                     Button {
-                        permitVM.allPermit.toggle()
+                        if permitVM.allSelected {
+                            permitVM.isTermsAccepted = false
+                            permitVM.isPrivacyPolicyAccepted = false
+                            permitVM.isNotificationOptedIn = false
+                        } else {
+                            permitVM.isTermsAccepted = true
+                            permitVM.isPrivacyPolicyAccepted = true
+                            permitVM.isNotificationOptedIn = true
+                        }
                     } label: {
-                        Image(systemName: permitVM.allPermit ? "checkmark.square.fill" : "square")
+                        Image(systemName: permitVM.allSelected ? "checkmark.square.fill" : "square")
                             .resizable()
                             .frame(width: 18,height: 19)
                             .foregroundStyle(.primary500)
@@ -56,8 +64,7 @@ struct PermitView: View {
                     }, accept: permitVM.isTermsAccepted, text: "이용약관")
                     Spacer()
                 }
-                .padding(.leading,40)
-                .padding(.bottom,14)
+                .padding(.bottom, 14)
                 
                 HStack {
                     CheckBox(action: {
@@ -65,8 +72,7 @@ struct PermitView: View {
                     }, accept: permitVM.isPrivacyPolicyAccepted, text: "개인정보 이용약관")
                     Spacer()
                 }
-                .padding(.leading,40)
-                .padding(.bottom,14)
+                .padding(.bottom, 14)
                 
                 HStack {
                     CheckBox(action: {
@@ -74,8 +80,8 @@ struct PermitView: View {
                     }, accept: permitVM.isNotificationOptedIn, text: "이용약관")
                     Spacer()
                 }
-                .padding(.leading,40)
             }
+            .padding(.leading, 40)
             Spacer()
             NextButton(destination: UserNameSettingView(), isEnabled: acceptAllow)
         }

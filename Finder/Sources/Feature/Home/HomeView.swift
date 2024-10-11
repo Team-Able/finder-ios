@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainHomeView: View {
+struct HomeView: View {
     @State private var toSetting = false
     var body: some View {
         ScrollView {
@@ -30,11 +30,11 @@ struct MainHomeView: View {
         }
         .navigationBarBackButtonHidden()
         .navigationDestination(isPresented: $toSetting) {
-            SettingView()
+            MyView()
         }
     }
 }
 
 #Preview {
-    MainHomeView()
+    HomeView()
 }

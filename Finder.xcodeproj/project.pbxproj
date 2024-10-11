@@ -16,7 +16,7 @@
 		6512EB542C7736180044FDEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6512EB532C7736180044FDEE /* Preview Assets.xcassets */; };
 		6512EB5F2C7737B40044FDEE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6512EB5E2C7737B40044FDEE /* Alamofire */; };
 		6512EB652C7737DA0044FDEE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512EB642C7737DA0044FDEE /* LoginView.swift */; };
-		6512EB672C7737F50044FDEE /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512EB662C7737F50044FDEE /* SettingView.swift */; };
+		6512EB672C7737F50044FDEE /* LogOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512EB662C7737F50044FDEE /* LogOutButton.swift */; };
 		6562BC542CACC215008255D7 /* ServerUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562BC532CACC215008255D7 /* ServerUrl.swift */; };
 		6562BC562CAD8680008255D7 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562BC552CAD8680008255D7 /* CustomSecureField.swift */; };
 		65770E572CB5155300A9E9D8 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E562CB5155300A9E9D8 /* BackButton.swift */; };
@@ -29,11 +29,17 @@
 		65770E7A2CB74C6000A9E9D8 /* SettingDoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E792CB74C6000A9E9D8 /* SettingDoneView.swift */; };
 		65770E7E2CB7E04700A9E9D8 /* TabViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E7D2CB7E04700A9E9D8 /* TabViewType.swift */; };
 		65770E802CB7E39000A9E9D8 /* TabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E7F2CB7E39000A9E9D8 /* TabViewCell.swift */; };
-		65770E822CB7E4A800A9E9D8 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E812CB7E4A800A9E9D8 /* TabView.swift */; };
+		65770E822CB7E4A800A9E9D8 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E812CB7E4A800A9E9D8 /* CustomTabView.swift */; };
 		65770E862CB7E64900A9E9D8 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E852CB7E64900A9E9D8 /* WriteView.swift */; };
 		65770E882CB7E65700A9E9D8 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E872CB7E65700A9E9D8 /* SearchView.swift */; };
-		65770E8A2CB8060900A9E9D8 /* MainHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E892CB8060900A9E9D8 /* MainHomeView.swift */; };
+		65770E8A2CB8060900A9E9D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E892CB8060900A9E9D8 /* HomeView.swift */; };
 		65770E8C2CB8073400A9E9D8 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E8B2CB8073400A9E9D8 /* Banner.swift */; };
+		65770E912CB8A59700A9E9D8 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E902CB8A59700A9E9D8 /* MyView.swift */; };
+		65770E942CB8A5BA00A9E9D8 /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E932CB8A5BA00A9E9D8 /* MyViewModel.swift */; };
+		65770E962CB8B1C800A9E9D8 /* RefreshAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E952CB8B1C800A9E9D8 /* RefreshAccessToken.swift */; };
+		65770E9A2CB8F4A000A9E9D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E992CB8F4A000A9E9D8 /* User.swift */; };
+		65770E9D2CB9764D00A9E9D8 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E9C2CB9764D00A9E9D8 /* SettingButton.swift */; };
+		65770E9F2CB97C5200A9E9D8 /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E9E2CB97C5200A9E9D8 /* Terms.swift */; };
 		657C4E982C8AD72D00FE63E1 /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657C4E972C8AD72D00FE63E1 /* Textfield.swift */; };
 		657C4E9B2C8AE2BC00FE63E1 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657C4E9A2C8AE2BC00FE63E1 /* TokenResponse.swift */; };
 		65FEC7082C8F25040067A2C5 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEC7072C8F25040067A2C5 /* ProgressBarView.swift */; };
@@ -61,7 +67,7 @@
 		6512EB532C7736180044FDEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6512EB5A2C77363C0044FDEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6512EB642C7737DA0044FDEE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		6512EB662C7737F50044FDEE /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		6512EB662C7737F50044FDEE /* LogOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButton.swift; sourceTree = "<group>"; };
 		6562BC532CACC215008255D7 /* ServerUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerUrl.swift; sourceTree = "<group>"; };
 		6562BC552CAD8680008255D7 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		65770E562CB5155300A9E9D8 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -89,11 +95,17 @@
 		65770E792CB74C6000A9E9D8 /* SettingDoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDoneView.swift; sourceTree = "<group>"; };
 		65770E7D2CB7E04700A9E9D8 /* TabViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewType.swift; sourceTree = "<group>"; };
 		65770E7F2CB7E39000A9E9D8 /* TabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewCell.swift; sourceTree = "<group>"; };
-		65770E812CB7E4A800A9E9D8 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		65770E812CB7E4A800A9E9D8 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		65770E852CB7E64900A9E9D8 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		65770E872CB7E65700A9E9D8 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		65770E892CB8060900A9E9D8 /* MainHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeView.swift; sourceTree = "<group>"; };
+		65770E892CB8060900A9E9D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		65770E8B2CB8073400A9E9D8 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		65770E902CB8A59700A9E9D8 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		65770E932CB8A5BA00A9E9D8 /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
+		65770E952CB8B1C800A9E9D8 /* RefreshAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshAccessToken.swift; sourceTree = "<group>"; };
+		65770E992CB8F4A000A9E9D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		65770E9C2CB9764D00A9E9D8 /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
+		65770E9E2CB97C5200A9E9D8 /* Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
 		657C4E972C8AD72D00FE63E1 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		657C4E9A2C8AE2BC00FE63E1 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 		65FEC7072C8F25040067A2C5 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
@@ -147,7 +159,7 @@
 		651243202C787FDF008E798D /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				651243232C788062008E798D /* Signup */,
+				651243232C788062008E798D /* SignUp */,
 				651243222C78803B008E798D /* Signin */,
 			);
 			path = Auth;
@@ -162,7 +174,7 @@
 			path = Signin;
 			sourceTree = "<group>";
 		};
-		651243232C788062008E798D /* Signup */ = {
+		651243232C788062008E798D /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				651243272C7885D3008E798D /* SignUpViewModel.swift */,
@@ -172,13 +184,13 @@
 				65FEC7202C8FC04E0067A2C5 /* PasswordSetting */,
 				65770E7B2CB7504000A9E9D8 /* SettingDone */,
 			);
-			path = Signup;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		651243242C7880F2008E798D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				65770E892CB8060900A9E9D8 /* MainHomeView.swift */,
+				65770E892CB8060900A9E9D8 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -195,7 +207,8 @@
 		651243262C78845C008E798D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				657C4E962C8AD71800FE63E1 /* component */,
+				65770E9B2CB9053E00A9E9D8 /* Util */,
+				657C4E962C8AD71800FE63E1 /* Component */,
 				651243292C7886CE008E798D /* Model */,
 				6512431E2C787F12008E798D /* Application */,
 				6512431B2C787EEE008E798D /* Feature */,
@@ -286,7 +299,7 @@
 			children = (
 				65770E7D2CB7E04700A9E9D8 /* TabViewType.swift */,
 				65770E7F2CB7E39000A9E9D8 /* TabViewCell.swift */,
-				65770E812CB7E4A800A9E9D8 /* TabView.swift */,
+				65770E812CB7E4A800A9E9D8 /* CustomTabView.swift */,
 			);
 			path = TabView;
 			sourceTree = "<group>";
@@ -310,31 +323,52 @@
 		65770E8D2CB80D9B00A9E9D8 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				6512EB662C7737F50044FDEE /* SettingView.swift */,
+				65770E922CB8A5A800A9E9D8 /* My */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		657C4E962C8AD71800FE63E1 /* component */ = {
+		65770E922CB8A5A800A9E9D8 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				65770E902CB8A59700A9E9D8 /* MyView.swift */,
+				65770E932CB8A5BA00A9E9D8 /* MyViewModel.swift */,
+				65770E992CB8F4A000A9E9D8 /* User.swift */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		65770E9B2CB9053E00A9E9D8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				6562BC532CACC215008255D7 /* ServerUrl.swift */,
+				65770E9E2CB97C5200A9E9D8 /* Terms.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		657C4E962C8AD71800FE63E1 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				657C4E972C8AD72D00FE63E1 /* Textfield.swift */,
 				6562BC552CAD8680008255D7 /* CustomSecureField.swift */,
 				65770E772CB6B28800A9E9D8 /* CheckPassWord.swift */,
 				65FEC7072C8F25040067A2C5 /* ProgressBarView.swift */,
-				6562BC532CACC215008255D7 /* ServerUrl.swift */,
 				65770E562CB5155300A9E9D8 /* BackButton.swift */,
 				65770E5E2CB5260900A9E9D8 /* CheckBox.swift */,
 				65770E732CB53B4000A9E9D8 /* NextButton.swift */,
 				65770E8B2CB8073400A9E9D8 /* Banner.swift */,
+				65770E9C2CB9764D00A9E9D8 /* SettingButton.swift */,
+				6512EB662C7737F50044FDEE /* LogOutButton.swift */,
 			);
-			path = component;
+			path = Component;
 			sourceTree = "<group>";
 		};
 		657C4E992C8AE2A800FE63E1 /* Response */ = {
 			isa = PBXGroup;
 			children = (
 				657C4E9A2C8AE2BC00FE63E1 /* TokenResponse.swift */,
+				65770E952CB8B1C800A9E9D8 /* RefreshAccessToken.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -478,11 +512,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				651243302C7889FD008E798D /* LoginModel.swift in Sources */,
-				65770E8A2CB8060900A9E9D8 /* MainHomeView.swift in Sources */,
-				65770E822CB7E4A800A9E9D8 /* TabView.swift in Sources */,
+				65770E8A2CB8060900A9E9D8 /* HomeView.swift in Sources */,
+				65770E822CB7E4A800A9E9D8 /* CustomTabView.swift in Sources */,
 				6562BC542CACC215008255D7 /* ServerUrl.swift in Sources */,
-				6512EB672C7737F50044FDEE /* SettingView.swift in Sources */,
+				6512EB672C7737F50044FDEE /* LogOutButton.swift in Sources */,
+				65770E9F2CB97C5200A9E9D8 /* Terms.swift in Sources */,
 				65770E7E2CB7E04700A9E9D8 /* TabViewType.swift in Sources */,
+				65770E9A2CB8F4A000A9E9D8 /* User.swift in Sources */,
 				65770E5F2CB5260900A9E9D8 /* CheckBox.swift in Sources */,
 				6512432C2C7886E8008E798D /* SignUpModel.swift in Sources */,
 				657C4E9B2C8AE2BC00FE63E1 /* TokenResponse.swift in Sources */,
@@ -495,6 +531,7 @@
 				65770E742CB53B4000A9E9D8 /* NextButton.swift in Sources */,
 				65770E5A2CB5197F00A9E9D8 /* PermitView.swift in Sources */,
 				65770E762CB5422100A9E9D8 /* PermitViewModel.swift in Sources */,
+				65770E912CB8A59700A9E9D8 /* MyView.swift in Sources */,
 				65FEC71F2C8FC0380067A2C5 /* EmailSettingView.swift in Sources */,
 				6512432E2C7889AD008E798D /* LoginViewModel.swift in Sources */,
 				65770E8C2CB8073400A9E9D8 /* Banner.swift in Sources */,
@@ -503,9 +540,12 @@
 				651243282C7885D3008E798D /* SignUpViewModel.swift in Sources */,
 				65770E802CB7E39000A9E9D8 /* TabViewCell.swift in Sources */,
 				65FEC7222C8FC0710067A2C5 /* PasswordSettingView.swift in Sources */,
+				65770E962CB8B1C800A9E9D8 /* RefreshAccessToken.swift in Sources */,
 				65770E882CB7E65700A9E9D8 /* SearchView.swift in Sources */,
 				65FEC7252C8FC0960067A2C5 /* UserNameSettingView.swift in Sources */,
 				6512EB4D2C7736170044FDEE /* FinderApp.swift in Sources */,
+				65770E942CB8A5BA00A9E9D8 /* MyViewModel.swift in Sources */,
+				65770E9D2CB9764D00A9E9D8 /* SettingButton.swift in Sources */,
 				65770E7A2CB74C6000A9E9D8 /* SettingDoneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
