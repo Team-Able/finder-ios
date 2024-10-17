@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CustomTabView: View {
-    @State private var selectedtab: TabViewType = .home
+    @State private var selectedTab: TabViewType = .home
+
     var body: some View {
         NavigationStack {
-            VStack {
-                Spacer()
+            VStack(spacing: 0) {
                 ZStack {
-                    switch selectedtab {
+                    switch selectedTab {
                     case .search:
                         SearchView()
                     case .home:
@@ -23,33 +23,25 @@ struct CustomTabView: View {
                         WriteView()
                     }
                 }
-            }
-            
-            GeometryReader { geometry in
-                VStack {
-                    Spacer()
-                    Spacer()
-                        .frame(width: geometry.size.width, height: 97)
-                        .overlay(
-                            HStack {
-                                ForEach(TabViewType.allCases, id: \.self) { tab in
-                                    Button(action: {
-                                        selectedtab = tab
-                                    }
-                                    ) {
-                                        VStack {
-                                            Spacer()
-                                            TabViewCell(type: tab, isSelected: selectedtab == tab)
-                                        }
-                                    }
-                                    .frame(maxWidth: .infinity)
+                
+                    HStack {
+                        ForEach(TabViewType.allCases, id: \.self) { tab in
+                            Button(action: {
+                                selectedTab = tab
+                            }) {
+                                VStack {
+                                    Spacer()
+                                    TabViewCell(type: tab, isSelected: selectedTab == tab)
                                 }
                             }
-                                .padding(.horizontal, 20)
-                        )
+                            .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .frame(height: 95)
                 }
-            }
         }
+        .padding(.bottom, 4)
     }
 }
 

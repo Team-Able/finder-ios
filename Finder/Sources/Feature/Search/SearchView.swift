@@ -10,12 +10,9 @@ import SwiftUI
 struct SearchView: View {
     var body: some View {
         VStack {
-            Text("검색")
-            Text("검색")
-            Text("검색")
-            Text("검색")
-            Text("검색")
+            Header()
         }
+        Spacer()
         .navigationBarBackButtonHidden()
     }
 }

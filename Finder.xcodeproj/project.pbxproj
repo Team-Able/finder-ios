@@ -40,8 +40,17 @@
 		65770E9A2CB8F4A000A9E9D8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E992CB8F4A000A9E9D8 /* User.swift */; };
 		65770E9D2CB9764D00A9E9D8 /* SettingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E9C2CB9764D00A9E9D8 /* SettingButton.swift */; };
 		65770E9F2CB97C5200A9E9D8 /* Terms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E9E2CB97C5200A9E9D8 /* Terms.swift */; };
+		65770EC72CBBCAD500A9E9D8 /* UpdateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770EC62CBBCAD500A9E9D8 /* UpdateProfileView.swift */; };
 		657C4E982C8AD72D00FE63E1 /* Textfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657C4E972C8AD72D00FE63E1 /* Textfield.swift */; };
 		657C4E9B2C8AE2BC00FE63E1 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657C4E9A2C8AE2BC00FE63E1 /* TokenResponse.swift */; };
+		65868C0B2CBDE53D00800E43 /* TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65868C0A2CBDE53D00800E43 /* TextColor.swift */; };
+		65868C0D2CBE0DB500800E43 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65868C0C2CBE0DB500800E43 /* ImagePicker.swift */; };
+		65868C0F2CBE289A00800E43 /* ImageUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65868C0E2CBE289A00800E43 /* ImageUploadViewModel.swift */; };
+		65868C132CBE966A00800E43 /* WriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65868C122CBE966A00800E43 /* WriteViewModel.swift */; };
+		65868C152CBE970000800E43 /* WriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65868C142CBE970000800E43 /* WriteModel.swift */; };
+		65868C182CBF492800800E43 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65868C172CBF492800800E43 /* Header.swift */; };
+		65868C1B2CBF9DCF00800E43 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65868C1A2CBF9DCF00800E43 /* MapController.swift */; };
+		65868C1D2CBFB20600800E43 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65868C1C2CBFB20600800E43 /* MapView.swift */; };
 		65FEC7082C8F25040067A2C5 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEC7072C8F25040067A2C5 /* ProgressBarView.swift */; };
 		65FEC7142C8F3A780067A2C5 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC70B2C8F3A770067A2C5 /* Pretendard-Black.ttf */; };
 		65FEC7152C8F3A780067A2C5 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC70C2C8F3A770067A2C5 /* Pretendard-SemiBold.ttf */; };
@@ -106,8 +115,17 @@
 		65770E992CB8F4A000A9E9D8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		65770E9C2CB9764D00A9E9D8 /* SettingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButton.swift; sourceTree = "<group>"; };
 		65770E9E2CB97C5200A9E9D8 /* Terms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terms.swift; sourceTree = "<group>"; };
+		65770EC62CBBCAD500A9E9D8 /* UpdateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileView.swift; sourceTree = "<group>"; };
 		657C4E972C8AD72D00FE63E1 /* Textfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textfield.swift; sourceTree = "<group>"; };
 		657C4E9A2C8AE2BC00FE63E1 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		65868C0A2CBDE53D00800E43 /* TextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColor.swift; sourceTree = "<group>"; };
+		65868C0C2CBE0DB500800E43 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		65868C0E2CBE289A00800E43 /* ImageUploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadViewModel.swift; sourceTree = "<group>"; };
+		65868C122CBE966A00800E43 /* WriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewModel.swift; sourceTree = "<group>"; };
+		65868C142CBE970000800E43 /* WriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteModel.swift; sourceTree = "<group>"; };
+		65868C172CBF492800800E43 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		65868C1A2CBF9DCF00800E43 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		65868C1C2CBFB20600800E43 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		65FEC7072C8F25040067A2C5 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		65FEC70B2C8F3A770067A2C5 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
 		65FEC70C2C8F3A770067A2C5 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -281,6 +299,7 @@
 		65770E5B2CB51BED00A9E9D8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				65868C0A2CBDE53D00800E43 /* TextColor.swift */,
 				65770E5C2CB51C2500A9E9D8 /* FontExt.swift */,
 			);
 			path = Extensions;
@@ -315,7 +334,11 @@
 		65770E842CB7E64000A9E9D8 /* Write */ = {
 			isa = PBXGroup;
 			children = (
+				65868C192CBF9D6600800E43 /* MapKit */,
+				65868C162CBE984C00800E43 /* ImageServer */,
 				65770E852CB7E64900A9E9D8 /* WriteView.swift */,
+				65868C122CBE966A00800E43 /* WriteViewModel.swift */,
+				65868C142CBE970000800E43 /* WriteModel.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -334,6 +357,7 @@
 				65770E902CB8A59700A9E9D8 /* MyView.swift */,
 				65770E932CB8A5BA00A9E9D8 /* MyViewModel.swift */,
 				65770E992CB8F4A000A9E9D8 /* User.swift */,
+				65770EC62CBBCAD500A9E9D8 /* UpdateProfileView.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -360,6 +384,7 @@
 				65770E8B2CB8073400A9E9D8 /* Banner.swift */,
 				65770E9C2CB9764D00A9E9D8 /* SettingButton.swift */,
 				6512EB662C7737F50044FDEE /* LogOutButton.swift */,
+				65868C172CBF492800800E43 /* Header.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -371,6 +396,24 @@
 				65770E952CB8B1C800A9E9D8 /* RefreshAccessToken.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		65868C162CBE984C00800E43 /* ImageServer */ = {
+			isa = PBXGroup;
+			children = (
+				65868C0E2CBE289A00800E43 /* ImageUploadViewModel.swift */,
+				65868C0C2CBE0DB500800E43 /* ImagePicker.swift */,
+			);
+			path = ImageServer;
+			sourceTree = "<group>";
+		};
+		65868C192CBF9D6600800E43 /* MapKit */ = {
+			isa = PBXGroup;
+			children = (
+				65868C1A2CBF9DCF00800E43 /* MapController.swift */,
+				65868C1C2CBFB20600800E43 /* MapView.swift */,
+			);
+			path = MapKit;
 			sourceTree = "<group>";
 		};
 		65FEC70A2C8F3A1F0067A2C5 /* Font */ = {
@@ -511,15 +554,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65868C0D2CBE0DB500800E43 /* ImagePicker.swift in Sources */,
+				65868C0B2CBDE53D00800E43 /* TextColor.swift in Sources */,
 				651243302C7889FD008E798D /* LoginModel.swift in Sources */,
 				65770E8A2CB8060900A9E9D8 /* HomeView.swift in Sources */,
 				65770E822CB7E4A800A9E9D8 /* CustomTabView.swift in Sources */,
 				6562BC542CACC215008255D7 /* ServerUrl.swift in Sources */,
+				65868C0F2CBE289A00800E43 /* ImageUploadViewModel.swift in Sources */,
+				65868C1D2CBFB20600800E43 /* MapView.swift in Sources */,
 				6512EB672C7737F50044FDEE /* LogOutButton.swift in Sources */,
 				65770E9F2CB97C5200A9E9D8 /* Terms.swift in Sources */,
 				65770E7E2CB7E04700A9E9D8 /* TabViewType.swift in Sources */,
 				65770E9A2CB8F4A000A9E9D8 /* User.swift in Sources */,
 				65770E5F2CB5260900A9E9D8 /* CheckBox.swift in Sources */,
+				65868C182CBF492800800E43 /* Header.swift in Sources */,
 				6512432C2C7886E8008E798D /* SignUpModel.swift in Sources */,
 				657C4E9B2C8AE2BC00FE63E1 /* TokenResponse.swift in Sources */,
 				65770E572CB5155300A9E9D8 /* BackButton.swift in Sources */,
@@ -527,13 +575,17 @@
 				657C4E982C8AD72D00FE63E1 /* Textfield.swift in Sources */,
 				65770E862CB7E64900A9E9D8 /* WriteView.swift in Sources */,
 				65770E5D2CB51C2500A9E9D8 /* FontExt.swift in Sources */,
+				65868C152CBE970000800E43 /* WriteModel.swift in Sources */,
+				65868C132CBE966A00800E43 /* WriteViewModel.swift in Sources */,
 				6562BC562CAD8680008255D7 /* CustomSecureField.swift in Sources */,
 				65770E742CB53B4000A9E9D8 /* NextButton.swift in Sources */,
 				65770E5A2CB5197F00A9E9D8 /* PermitView.swift in Sources */,
+				65868C1B2CBF9DCF00800E43 /* MapController.swift in Sources */,
 				65770E762CB5422100A9E9D8 /* PermitViewModel.swift in Sources */,
 				65770E912CB8A59700A9E9D8 /* MyView.swift in Sources */,
 				65FEC71F2C8FC0380067A2C5 /* EmailSettingView.swift in Sources */,
 				6512432E2C7889AD008E798D /* LoginViewModel.swift in Sources */,
+				65770EC72CBBCAD500A9E9D8 /* UpdateProfileView.swift in Sources */,
 				65770E8C2CB8073400A9E9D8 /* Banner.swift in Sources */,
 				65770E782CB6B28800A9E9D8 /* CheckPassWord.swift in Sources */,
 				6512EB652C7737DA0044FDEE /* LoginView.swift in Sources */,
@@ -689,6 +741,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -720,6 +773,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -8,30 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var toSetting = false
     var body: some View {
-        ScrollView {
-            VStack {
-                HStack {
-                    Image(.logo)
-                        .resizable()
-                        .frame(width: 150,height: 52)
-                    Spacer()
-                    Button(action: {
-                        toSetting = true
-                    }, label: {
-                        Image(.my)
-                    })
-                    .padding()
+        VStack {
+            Header()
+            ScrollView {
+                VStack {
+                    BannerView()
                 }
-                .padding()
-                BannerView()
             }
         }
         .navigationBarBackButtonHidden()
-        .navigationDestination(isPresented: $toSetting) {
-            MyView()
-        }
     }
 }
 
