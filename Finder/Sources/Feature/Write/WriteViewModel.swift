@@ -7,3 +7,4 @@ class WriteViewModel: ObservableObject {
     @Published var imageUrl = ""
     @Published var location: Location = Location(latitude: 0.0, longitude: 0.0)
 }
+//TODO: 검색, 홈, 글쓰기(post, 위치 검색해서 마크찍기)

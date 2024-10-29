@@ -17,6 +17,7 @@ struct MapView: View {
             .onAppear {
                 showMyregion()
             }
+            .ignoresSafeArea()
     }
     func showMyregion() {
         let manager = CLLocationManager()

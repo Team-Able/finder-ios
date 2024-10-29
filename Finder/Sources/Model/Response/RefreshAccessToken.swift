@@ -4,7 +4,7 @@ import Foundation
 //MARK: 이거 수정
 class RefreshAccessToken {
     let serverUrl = ServerUrl.shared
-    static let shared = RefreshAccessToken()
+    static let shared = RefreshAccessToken() 
     
     private init() {}
     
