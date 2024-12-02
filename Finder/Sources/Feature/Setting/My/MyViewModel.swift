@@ -20,10 +20,9 @@ class MyViewModel: ObservableObject {
         
         AF.request(url,
                    method: .get,
-                   parameters: nil,
                    headers: headers
         )
-        .validate()
+        .validate(statusCode: 200..<300)
         .responseJSON { response in
             switch response.result {
             case .success(let data):

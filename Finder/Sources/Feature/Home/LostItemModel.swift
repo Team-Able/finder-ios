@@ -18,12 +18,25 @@ struct ItemInfo: Identifiable,Codable {
     var location: ItemLocation
     var createdAt: String
     var updatedAt: String
+    
+    init(id: Int, title: String, content: String, imageUrl: String, status: String? = nil, location: ItemLocation, createdAt: String, updatedAt: String) {
+        self.id = id
+        self.title = title
+        self.content = content
+        self.imageUrl = imageUrl
+        self.status = status
+        self.location = location
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+    }
+    
+    struct ItemLocation: Codable {
+        var latitude: Double
+        var longitude: Double
+    }
 }
 
-struct ItemLocation: Codable {
-    var latitude: Int
-    var longitude: Int
-}
+
 
 struct Status: Codable {
     var data: [ItemInfo]

@@ -44,7 +44,7 @@ class ImageUploadViewModel: ObservableObject {
                         DispatchQueue.main.async {
                             // url/uploads/imageName
                             self.imageUrl = self.serverUrl.baseUrl + "/uploads/" + imageName
-                            print(self.imageUrl)
+                            print(self.imageUrl ?? "")
                         }
                     } else {
                         print("응답 데이터에서 이미지 URL을 찾을 수 없습니다.")

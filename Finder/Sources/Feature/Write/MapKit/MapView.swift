@@ -1,43 +1,27 @@
-//
-//  MapView.swift
-//  Finder
-//
-//  Created by dgsw30 on 10/16/24.
-//
-
 import SwiftUI
 import MapKit
 import CoreLocation
 
 struct MapView: View {
-    @State private var region: MKCoordinateRegion = MKCoordinateRegion()
-    @State private var locationManager = CLLocationManager()
-    var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true)
-            .onAppear {
-                showMyregion()
-            }
-            .ignoresSafeArea()
+    @State private var region: MKCoordinateRegion
+    var latitude: Binding<Double>
+    var longitude: Binding<Double>
+
+    init(latitude: Binding<Double>, longitude: Binding<Double>, initialLatitude: Double, initialLongitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+        self._region = State(initialValue: MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: initialLatitude, longitude: initialLongitude),
+            span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        ))
     }
-    func showMyregion() {
-        let manager = CLLocationManager()
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        
-        let latitude = manager.location?.coordinate.latitude
-        let longitude = manager.location?.coordinate.longitude
-        
-        if let location = locationManager.location {
-            region = MKCoordinateRegion(
-                center: CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!),
-                span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-            )
-        } else {
-            print("실패")
-        }
+    
+    var body: some View {
+        Map(coordinateRegion: $region, showsUserLocation: false)
+            .ignoresSafeArea()
     }
 }
 
 #Preview {
-    MapView()
+    MapView(latitude: .constant(37.7749), longitude: .constant(-122.4194), initialLatitude: 37.7749, initialLongitude: -122.4194)
 }

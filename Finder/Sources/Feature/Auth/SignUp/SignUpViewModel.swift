@@ -32,7 +32,7 @@ class SignUpViewModel: ObservableObject {
         .validate(statusCode: 200..<300)
         .response { response in
             switch response.result {
-            case .success(let result):
+            case .success(let _result):
                 print("성공")
                 self.signuperrorMessage = nil
             case .failure(let error):

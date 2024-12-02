@@ -2,7 +2,6 @@ import SwiftUI
 import Alamofire
 
 class LoginViewModel: ObservableObject {
-    // 스크래치처럼 값을 방송해서 보냄
     @Published var email = ""
     @Published var password = ""
     @Published var loginerrorMessage: String?
@@ -27,8 +26,8 @@ class LoginViewModel: ObservableObject {
             encoder: JSONParameterEncoder.default
         )
         .validate(statusCode: 200..<300)
-        .responseDecodable(of: BaseResponse<TokenData>.self) { res in // 처리한거 변환
-            switch res.result {
+        .responseDecodable(of: BaseResponse<TokenData>.self) { response in
+            switch response.result {
             case .success(let result):
                 self.loginerrorMessage = nil
                 UserDefaults.standard.set(result.data.accessToken, forKey: "accessToken")

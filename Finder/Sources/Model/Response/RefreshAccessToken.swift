@@ -1,7 +1,7 @@
 import Alamofire
 import Foundation
 
-//MARK: 이거 수정
+
 class RefreshAccessToken {
     let serverUrl = ServerUrl.shared
     static let shared = RefreshAccessToken() 
@@ -9,7 +9,7 @@ class RefreshAccessToken {
     private init() {}
     
     func reissue(completion: @escaping () -> Void) {
-        let url = serverUrl.getUrl(for: "/auth/reissue")
+        let url = serverUrl.getUrl(for: "/auth/ressue")
         
         guard let refreshToken = UserDefaults.standard.string(forKey: "refreshToken") else {
             print("Refresh token이 존재하지 않습니다.")
