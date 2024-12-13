@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct EmailSettingView: View {
-    @ObservedObject var emialVM: SignUpViewModel = .init()
+    @ObservedObject var emailVM = SignUpViewModel()
     var isAble: Bool {
-        emialVM.checkEmail(str: emialVM.email) != true
+        emailVM.checkEmail(str: emailVM.email) != true
     }
     var body: some View {
         VStack {
@@ -24,13 +24,13 @@ struct EmailSettingView: View {
             }
             .padding(.bottom,30)
             VStack {
-                Textfield(image: .profil, text: "이메일을 입력하세요.", posttext: $emialVM.email)
+                FinderTextField(image: .profil, text: "이메일을 입력하세요.", posttext: $emailVM.email)
             }
             Spacer()
             Spacer()
             Spacer()
             Spacer()
-            NavigationLink(destination: PasswordSettingView(passWordVM: emialVM)) {
+            NavigationLink(destination: PasswordSettingView(passWordVM: emailVM)) {
                 Text("다음")
                     .font(.bold(22))
                     .foregroundColor(.white)

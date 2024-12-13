@@ -19,7 +19,7 @@ struct MyView: View {
                     .frame(width: 130,height: 130)
                 Text("\(myVM.username)님")
                     .font(.medium(20))
-                Text("\(myVM.email)")
+                Text("이메일: \(myVM.email)")
                 Button {
                     isAlertPresented.toggle()
                 } label: {
@@ -29,7 +29,7 @@ struct MyView: View {
                         .frame(width: 135,height: 35)
                         .background(Color.white)
                         .cornerRadius(5)
-                        .shadow(radius: 2)
+                        .shadow(radius: 1)
                 }
                 VStack(spacing: 1) {
                     Text("내정보")

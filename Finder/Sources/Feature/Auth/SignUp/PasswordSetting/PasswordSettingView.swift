@@ -30,7 +30,7 @@ struct PasswordSettingView: View {
             }
             .padding(.bottom,30)
             VStack {
-                CustomSecureField(image: .password, text: "비밀번호를 입력해주세요 8자", postText: $passWordVM.password)
+                FinderSecureField(image: .password, text: "비밀번호를 입력해주세요 8자", postText: $passWordVM.password)
                 
                 CheckPassWord(text: "비밀번호를 재입력해주세요", check: checkPassWordBolean, postText: $checkPassWord)
             }

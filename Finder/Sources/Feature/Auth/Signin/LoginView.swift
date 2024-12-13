@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @StateObject var loginVM: LoginViewModel = .init()
+    @StateObject var loginVM = LoginViewModel()
     @State private var showPassword = false
     @State private var isAlert = false
     
@@ -13,19 +13,18 @@ struct LoginView: View {
                 VStack {
                     Image(.finderimage)
                         .resizable()
-                        .frame(width: 250,height: 90)
+                        .frame(width: 250, height: 90)
                     Text("찾았다!")
                         .font(.regular(15))
                         .foregroundColor(.primary500)
                         .bold()
-                        .padding(.bottom,40)
+                        .padding(.bottom, 40)
                 }
-                .padding(.bottom,10)
+                .padding(.bottom, 10)
                 VStack {
-                    Textfield(image: .profil, text: "이메일을 입력하세요", posttext: $loginVM.email)
-                        .padding(.vertical,4)
+                    FinderTextField(image: .profil, text: "이메일을 입력하세요.", posttext: $loginVM.email)
                     
-                    CustomSecureField(image: .password, text: "비밀번호를 입력해주세요", postText: $loginVM.password)
+                    FinderSecureField(image: .password, text: "비밀번호를 입력해주세요", postText: $loginVM.password)
                     
                 }
                 .padding(.bottom, 30)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingDoneView: View {
-    @StateObject var signupVM: SignUpViewModel = .init()
+    @StateObject var signupVM = SignUpViewModel()
     @State private var toFirstView = false
     @State private var showingAlert = false
     @State private var isHidden = true
@@ -16,7 +16,7 @@ struct SettingDoneView: View {
         VStack {
             if !isHidden {
                 UserNameSettingView(usernameVM: signupVM)
-                EmailSettingView(emialVM: signupVM)
+                EmailSettingView(emailVM: signupVM)
                 PasswordSettingView(passWordVM: signupVM)
             }
             Spacer()

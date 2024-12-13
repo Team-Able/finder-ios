@@ -15,6 +15,9 @@ struct UpdateProfileView: View {
         ZStack {
             Color.black.opacity(0.2)
                 .ignoresSafeArea(.all)
+                .onTapGesture {
+                    isPresented = false
+                }
             
             VStack {
                 VStack {
@@ -40,33 +43,25 @@ struct UpdateProfileView: View {
                             .stroke(Color.init(uiColor: .systemGray4),lineWidth: 1)
                     )
                     HStack {
-                        Button {
-                            isPresented = false
-                        } label: {
-                            HStack {
-                                Text("취소")
-                                    .font(.regular(18))
-                                    .foregroundStyle(Color.red)
+                        VStack {
+                            Divider()
+                            Button {
+                                if !changeUserName.isEmpty {
+                                    isPresented = false
+                                }
+                            } label: {
+                                VStack {
+                                    Text("수정완료")
+                                        .font(.regular(18))
+                                        .padding()
+                                        .cornerRadius(10)
+                                        .foregroundStyle(changeUserName.isEmpty ? Color.init(uiColor: .systemGray4) : Color.primary900)
+                                }
+                                .disabled(changeUserName.isEmpty)
                             }
                         }
-                        .padding(.horizontal, 32)
-                        Button {
-                            if !changeUserName.isEmpty {
-                                isPresented = false
-                            }
-                        } label: {
-                            VStack {
-                                Text("수정완료")
-                                    .font(.regular(18))
-                                    .padding()
-                                    .cornerRadius(10)
-                                    .foregroundStyle(changeUserName.isEmpty ? Color.init(uiColor: .systemGray4) : Color.primary900)
-                            }
-                            .disabled(changeUserName.isEmpty)
-                        }
-                        .padding(.trailing,14)
                     }
-                    .padding(.top,44)
+                    .padding(.top, 44)
                 }
                 .padding()
                 .background(Color.white)

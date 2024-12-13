@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct UserNameSettingView: View {
-    @ObservedObject var usernameVM: SignUpViewModel = .init()
+    @ObservedObject var usernameVM = SignUpViewModel()
     var isAble: Bool {
         usernameVM.username.count < 3 || usernameVM.username.count > 20
     }
@@ -25,13 +25,13 @@ struct UserNameSettingView: View {
             }
             .padding(.bottom,30)
             VStack {
-                Textfield(image: .profil, text: "이름을 입력하세요.", posttext: $usernameVM.username)
+                FinderTextField(image: .profil, text: "이름을 입력하세요.", posttext: $usernameVM.username)
             }
             Spacer()
             Spacer()
             Spacer()
             Spacer()
-            NavigationLink(destination: EmailSettingView(emialVM: usernameVM)) {
+            NavigationLink(destination: EmailSettingView(emailVM: usernameVM)) {
                 Text("다음")
                     .font(.bold(22))
                     .foregroundColor(.white)

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Alamofire
 import SwiftUI
 
 struct ItemInfo: Identifiable,Codable {
@@ -19,24 +18,11 @@ struct ItemInfo: Identifiable,Codable {
     var createdAt: String
     var updatedAt: String
     
-    init(id: Int, title: String, content: String, imageUrl: String, status: String? = nil, location: ItemLocation, createdAt: String, updatedAt: String) {
-        self.id = id
-        self.title = title
-        self.content = content
-        self.imageUrl = imageUrl
-        self.status = status
-        self.location = location
-        self.createdAt = createdAt
-        self.updatedAt = updatedAt
-    }
-    
     struct ItemLocation: Codable {
         var latitude: Double
         var longitude: Double
     }
 }
-
-
 
 struct Status: Codable {
     var data: [ItemInfo]

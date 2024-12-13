@@ -1,7 +1,7 @@
 import Foundation
 
 struct ServerUrl {
-    var baseUrl = "https://api.finder.mcv.kr"
+    var baseUrl = "http://15.165.119.40:8080"
     
     func getUrl(for endpoint: String) -> String {
         return baseUrl + endpoint

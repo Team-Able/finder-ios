@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomSecureField: View {
+struct FinderSecureField: View {
     @State private var showPassword = false
     let image: UIImage
     let text: String

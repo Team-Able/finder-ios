@@ -1,15 +1,16 @@
 //
-//  Textfield.swift
+//  Finder.swift
 //  Finder
 //
-//  Created by dgsw30 on 9/6/24.
+//  Created by dgsw30 on 12/13/24.
 //
 
 import SwiftUI
 
-struct Textfield: View {
+struct FinderCommentField: View {
     let image: UIImage
     let text: String
+    let action: () -> Void
     @Binding var posttext: String
     
     var body: some View {
@@ -33,12 +34,21 @@ struct Textfield: View {
                 .tint(.primary500)
                 .font(.custom("Pretendard-Regular", size: 14))
             
+            Button {
+                action()
+            } label: {
+                Text("게시")
+                    .foregroundStyle(.primary600)
+                    .font(.custom("Pretendard-Regular", size: 14))
+                    .padding(.trailing)
+            }
+            
         }
         .background(Color.backgroundcolor)
-        .frame(width: 300, height: 50)
+        .frame(width: 344, height: 50)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(posttext.isEmpty ? Color.init(uiColor: .systemGray4) : Color.primary500 , lineWidth: 1)
+                .stroke(posttext.isEmpty ? Color.init(uiColor: .systemGray4) : Color.progress , lineWidth: 1)
         )
         .padding(.vertical, 2)
     }

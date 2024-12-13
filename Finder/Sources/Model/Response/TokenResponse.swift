@@ -3,6 +3,10 @@ struct TokenData: Codable {
     let refreshToken: String
 }
 
+struct TokenResponse: Codable {
+    let refreshToken: String
+}
+
 struct BaseResponse<T: Decodable>: Decodable {
     let status: Int
     let message: String
