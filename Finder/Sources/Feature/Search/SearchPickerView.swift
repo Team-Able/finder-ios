@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//TODO: search
 struct SearchPickerView: View {
     @StateObject var viewModel = LostItemViewModel()
     @ObservedObject var myVM = MyViewModel()
