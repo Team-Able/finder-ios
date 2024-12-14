@@ -42,8 +42,7 @@ struct EmailSettingView: View {
             .disabled(isAble)
         }
         Spacer()
-            .navigationBarBackButtonHidden()
-        BackButton()
+            .backButton()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     ProgressBar(progress: .three)

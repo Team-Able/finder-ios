@@ -13,6 +13,8 @@ class WriteViewModel: ObservableObject {
             switch result {
             case .success(_):
                 self.successAlert = true
+                self.title = ""
+                self.content = ""
             case .failure(let error):
                 print(error.localizedDescription)
             }

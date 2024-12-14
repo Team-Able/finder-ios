@@ -67,7 +67,7 @@ struct MyView: View {
                         }, color: .black)
                         LogOutButton()
                             .padding(.top,1)
-                        SettingButton(text: "회원탈퇴", action: {}, color: .red)
+                        DeleteUser()
                     }
                     .background(Color.backgroundcolor)
                     .frame(width: 344, height: 227)

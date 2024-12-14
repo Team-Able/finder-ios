@@ -26,7 +26,7 @@ struct CheckPassWord: View {
                 .font(.custom("Pretendard-Regular", size: 14))
             
             if check == true {
-                Image(.checkmark)
+                Image(.rightmark)
                     .resizable()
                     .frame(width: 16,height: 18)
                     .padding(.trailing, 14)

@@ -15,7 +15,6 @@ struct SearchPickerView: View {
     @State var editText = false
     @State var sortPickerOn = false
     var body: some View {
-        
         ZStack {
             NavigationStack {
                 VStack(alignment: .leading) {
@@ -32,15 +31,16 @@ struct SearchPickerView: View {
                             }
                         }
                         .foregroundColor(.black)
-                        .padding(.trailing,15)
+                        .padding(.trailing, 15)
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 1.0)
-                            .frame(width: 243,height: 40)
+                            .frame(width: 243, height: 40)
                             .foregroundColor(.primary500)
                             .overlay {
                                 HStack {
                                     TextField("분실물을 검색해 주세요.",text: $searchText)
                                         .autocapitalization(.none)
+                                        .tint(.primary500)
                                         .font(.system(size: 16).weight(.regular))
                                         .onChange(of: searchText) { text in
                                             withAnimation(.easeInOut(duration: 0.1)) {
@@ -48,7 +48,7 @@ struct SearchPickerView: View {
                                             }
                                         }
                                     if editText {
-                                        Button  {
+                                        Button {
                                             withAnimation(.easeInOut(duration: 0.1)) {
                                                 self.searchText = ""
                                             }
@@ -63,6 +63,7 @@ struct SearchPickerView: View {
                                         
                                     
                                 }
+                                .hideKeyBoard()
                                 .padding(.horizontal,10)
                             }
                     }

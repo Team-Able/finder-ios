@@ -15,4 +15,17 @@ class MyViewModel: ObservableObject {
             }
         }
     }
+    
+    func deleteMy() {
+        NetworkRunner.shared.request("/users/secession", method: .delete, response: UserData.self, isAuthorization: true) { result in
+            switch result {
+            case .success(_):
+                UserDefaults.standard.removeObject(forKey: "accessToken")
+                UserDefaults.standard.removeObject(forKey: "refreshToken")
+            case .failure(let error):
+                print(error.localizedDescription)
+                print("실패")
+            }
+        }
+    }
 }
