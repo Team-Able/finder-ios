@@ -1,7 +1,8 @@
 //MARK: 이름수정
 import SwiftUI
 
-struct LogOutButton: View {
+struct DeleteUser: View {
+    @StateObject var myVM = MyViewModel()
     @State private var showingAlert = false
 
     var body: some View {
@@ -11,8 +12,8 @@ struct LogOutButton: View {
             } label: {
                 VStack {
                     HStack {
-                        Text("로그아웃")
-                            .foregroundColor(.black)
+                        Text("회원탈퇴")
+                            .foregroundColor(.red)
                             .font(.regular(17))
                             .padding()
                         Spacer()
@@ -31,13 +32,13 @@ struct LogOutButton: View {
             }
             .alert(isPresented: $showingAlert) {
                 Alert(
-                    title: Text("로그아웃"),
-                    message: Text("정말 로그아웃 하시겠습니까?"),
+                    title: Text("회원탈퇴"),
+                    message: Text("정말 회원탈퇴 하시겠습니까?"),
                     primaryButton: .default(Text("취소"))
                     {
                     },
-                    secondaryButton: .destructive(Text("로그아웃")) {
-                        logout()
+                    secondaryButton: .destructive(Text("회원탈퇴")) {
+                        deleteUser()
                     }
                 )
             }
@@ -46,9 +47,9 @@ struct LogOutButton: View {
         .backButton()
     }
     
-    func logout() {
-        UserDefaults.standard.removeObject(forKey: "accessToken")
-        UserDefaults.standard.removeObject(forKey: "refreshToken")
+    func deleteUser() {
+        myVM.deleteMy()
         print("토큰삭제됨")
     }
 }
+

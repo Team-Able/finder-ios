@@ -86,8 +86,7 @@ struct PermitView: View {
             NextButton(destination: UserNameSettingView(), isEnabled: acceptAllow)
         }
         .padding(.top,144)
-        .navigationBarBackButtonHidden()
-        BackButton()
+        .backButton()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     ProgressBar(progress: .one)

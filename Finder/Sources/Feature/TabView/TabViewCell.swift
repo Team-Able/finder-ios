@@ -29,7 +29,9 @@ struct TabViewCell: View {
                 Image(isSelected ? type.click : type.image)
                     .resizable()
                     .frame(width: 28,height: 28)
-                    .padding()
+                    .padding(.top, 0)
+                    .padding(.horizontal, 14)
+                    .padding(.bottom, 3)
             }
             Text(type.text)
                 .font(.regular(14))

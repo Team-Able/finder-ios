@@ -50,8 +50,7 @@ struct PasswordSettingView: View {
             .disabled(passwordDisabled)
         }
         Spacer()
-            .navigationBarBackButtonHidden()
-        BackButton()
+            .backButton()
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     ProgressBar(progress: .four)

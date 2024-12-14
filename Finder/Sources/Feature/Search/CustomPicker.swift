@@ -14,17 +14,17 @@ struct CustomPicker: View {
         Color.secondary.opacity(0.4)
             .overlay {
                 RoundedRectangle(cornerRadius: 14)
-                    .frame(width: 272,height: 272)
+                    .frame(width: 272, height: 272)
                     .foregroundColor(.white.opacity(1))
                     .overlay {
                         VStack(alignment:.leading) {
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.secondary,lineWidth: 0.4)
-                                .frame(width: 250,height: 36)
+                                .frame(width: 250, height: 36)
                                 .overlay {
                                     VStack {
                                         HStack {
-                                            TextField("지역 검색하기",text: $searchLocal)
+                                            TextField("지역 검색하기", text: $searchLocal)
                                                 .font(.system(size: 13).weight(.regular))
                                                 .padding()
                                             Image(systemName: "magnifyingglass")

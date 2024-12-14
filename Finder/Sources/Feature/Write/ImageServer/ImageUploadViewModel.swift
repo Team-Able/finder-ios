@@ -29,8 +29,7 @@ class ImageUploadViewModel: ObservableObject {
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
-                    self.imageUrl = ("\(baseUrl)/" + data.data)
-                    completion("\(baseUrl)/" + data.data)
+                    self.imageUrl = data.data
                 }
             case .failure(let error):
                 DispatchQueue.main.async {

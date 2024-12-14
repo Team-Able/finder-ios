@@ -22,12 +22,12 @@ struct Location: Codable {
 
 //MARK: 글쓰기 성공 했을떄
 struct CompleteWrite {
-    let data: DataClass
+    let data: DetailDataClass
     let status: Int
     let message: String
 }
 
-struct DataClass {
+struct DetailDataClass {
     let id: Int
     let title: String
     let author: CompleteAuthor
