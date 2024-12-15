@@ -17,7 +17,7 @@ struct LatestView: View {
             Spacer()
                 .frame(width: 130)
             NavigationLink {
-                EmptyView()
+                DetailLatestView()
             } label: {
                 Text("자세히")
                     .font(.system(size: 15).weight(.regular))
@@ -29,8 +29,7 @@ struct LatestView: View {
             LazyHStack(spacing: 15) {
                 ForEach(viewModel.latestItems, id: \.id) { item in
                     LatestItemPost(viewModel: item) {
-                        viewModel.id = item.id
-                        viewModel.detailPost()
+                        viewModel.detailPost(id: item.id)
                         toDetail = true
                     }
                 }

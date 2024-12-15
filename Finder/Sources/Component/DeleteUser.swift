@@ -42,9 +42,7 @@ struct DeleteUser: View {
                     }
                 )
             }
-            
         }
-        .backButton()
     }
     
     func deleteUser() {

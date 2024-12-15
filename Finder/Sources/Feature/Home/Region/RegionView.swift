@@ -16,7 +16,7 @@ struct RegionView: View {
                 .font(.system(size: 20).weight(.medium))
             Spacer().frame(width: 160)
             NavigationLink {
-                EmptyView()
+                DetailRegionView()
             } label: {
                 Text("자세히")
                     .font(.system(size: 15).weight(.regular))
@@ -28,8 +28,7 @@ struct RegionView: View {
             LazyHStack(spacing: 15) {
                 ForEach(viewModel.items, id: \.id) { item in
                     LostItemPost(viewModel: item) {
-                        viewModel.id = item.id
-                        viewModel.detailPost()
+                        viewModel.detailPost(id: item.id)
                         toDetail = true
                     }
                 }
