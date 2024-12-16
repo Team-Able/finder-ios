@@ -51,5 +51,6 @@ struct FinderCommentField: View {
                 .stroke(posttext.isEmpty ? Color.init(uiColor: .systemGray4) : Color.progress , lineWidth: 1)
         )
         .padding(.vertical, 2)
+        .hideKeyBoard()
     }
 }

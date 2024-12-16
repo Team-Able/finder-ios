@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct LatestComponentView: View {
     let latestVM: LatestPostModel
@@ -16,10 +17,17 @@ struct LatestComponentView: View {
                 EmptyView()
             } label: {
                 HStack {
-                    AsyncImage(url:URL(string: latestVM.imageUrl)) { image in
-                        image.image?.resizable()
-                            .frame(width: 110, height: 110)
-                    }
+                    let imageUrl = URL(string: latestVM.imageUrl)
+                    KFImage(imageUrl)
+                        .placeholder { _ in
+                            Rectangle()
+                                .fill(Color.init(uiColor: .systemGray2))
+                                .frame(width: 110, height: 110)
+                        }
+                        .resizable()
+                        .frame(width: 110, height: 110)
+                        .cornerRadius(8)
+                    
                     
                     VStack(alignment:.leading) {
                         Text(latestVM.title)
@@ -31,14 +39,10 @@ struct LatestComponentView: View {
                             Text(latestVM.createdAt)
                                 .font(.system(size: 12).weight(.regular))
                             Spacer().frame(width: 40)
-                            Label {
-                                Text("\(latestVM.id)")
-                                    .font(.system(size: 12).weight(.regular))
-                            } icon: {
-                                Image(systemName: "bubble.right")
-                                    .font(.system(size: 12).weight(.regular))
-                                    .foregroundColor(.primary800)
-                            }
+                            
+                            Image(systemName: "bubble.right")
+                                .font(.system(size: 12).weight(.regular))
+                                .foregroundColor(.primary800)
                         }
                         .foregroundColor(.secondary.opacity(0.7))
                         .padding(.top, 10)

@@ -38,16 +38,11 @@ struct DeleteUser: View {
                     {
                     },
                     secondaryButton: .destructive(Text("회원탈퇴")) {
-                        deleteUser()
+                        myVM.deleteMy()
                     }
                 )
             }
         }
-    }
-    
-    func deleteUser() {
-        myVM.deleteMy()
-        print("토큰삭제됨")
     }
 }
 

@@ -1,5 +1,5 @@
 {
-  "originHash" : "fd2c6b8ddec6754b8a59dc00d68f84024cf60fd078c491bf813baeed8c8a1341",
+  "originHash" : "e98a524bff70cc9b53f3661d0a743000f437648a3d3569a6efebcb9ebbdd05b0",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -8,6 +8,24 @@
       "state" : {
         "revision" : "f455c2975872ccd2d9c81594c658af65716e9b9a",
         "version" : "5.9.1"
+      }
+    },
+    {
+      "identity" : "flowkit?tab=readme-ov-file",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Mercen-Lee/FlowKit?tab=readme-ov-file",
+      "state" : {
+        "branch" : "main",
+        "revision" : "71ee3f7414747e16f320a6f6b424152e22d9d694"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher",
+      "state" : {
+        "revision" : "623e1595526a2034dc49eda264a4d174e90dac64",
+        "version" : "8.1.2"
       }
     }
   ],

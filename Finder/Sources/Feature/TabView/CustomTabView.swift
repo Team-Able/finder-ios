@@ -15,7 +15,7 @@ struct CustomTabView: View {
             VStack(spacing: 0) {
                 ZStack {
                     switch selectedTab {
-                    case .search: SearchPickerView()
+                    case .search: SearchView()
                     case .home: HomeView()
                     case .write: WriteView()
                     }
