@@ -1,30 +1,30 @@
 //
-//  LostItemModel.swift
+//  LatestPostModel.swift
 //  Finder
 //
-//  Created by dgsw07 on 10/29/24.
+//  Created by dgsw30 on 12/14/24.
 //
 
 import Foundation
 import SwiftUI
 
-struct ItemInfo: Codable {
+struct SearchModel: Identifiable, Codable {
     var id: Int
     var title: String
     var content: String
     var imageUrl: String
     var status: String?
-    var location: ItemLocation
+    var location: SearchItemLocation
     var createdAt: String
     var updatedAt: String
     
-    struct ItemLocation: Codable {
+    struct SearchItemLocation: Codable {
         var latitude: Double
         var longitude: Double
     }
 }
 
-struct Status: Codable, StatusResponse {
-    var data: [ItemInfo]
+struct SearchStatus: Codable, StatusResponse {
+    var data: [SearchModel]
 }
 

@@ -23,14 +23,15 @@ struct DetailPostView: View {
                         .cornerRadius(40)
                 }
                 VStack {
-                    if let imageURL = URL(string: getPost.imageURL) {
+                    if let imageURL = URL(string: getPost.imageUrl) {
                         AsyncImage(url: imageURL) { image in
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(10)
                                 .frame(width: 330, height: 171)
-                        } placeholder: {
+                                .cornerRadius(8)
+                        }  placeholder: {
                             ProgressView()
                         }
                         .padding(.top, 320)
@@ -75,7 +76,7 @@ struct DetailPostView: View {
         .edgesIgnoringSafeArea(.all)
         .backButton()
         .navigationDestination(isPresented: $toComment) {
-            CommentView()
+            CommentView(id: .constant(getPost.id))
         }
     }
 }

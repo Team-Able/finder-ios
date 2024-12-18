@@ -7,8 +7,12 @@ class WriteViewModel: ObservableObject {
     @Published var image: String? = ""
     @Published var latitude = 37.74913611
     @Published var longitude = 128.8784972
-
-    func Write() {
+    
+    var writeDisabled: Bool {
+        title.isEmpty || content.isEmpty || image == nil
+    }
+    
+    func write() {
         NetworkRunner.shared.request("/items/lost", method: .post, parameters: WriteModel(title: title, content: content, imageUrl: image ?? "", location: Location(latitude: latitude, longitude: longitude)), isAuthorization: true) { result in
             switch result {
             case .success(_):

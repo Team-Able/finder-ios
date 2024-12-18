@@ -162,8 +162,12 @@ struct WriteView: View {
                                 } label: {
                                     HStack {
                                         Spacer()
-                                        Image(systemName: "trash")
-                                            .foregroundStyle(.red)
+                                        Text("이미지 삭제하기")
+                                            .frame(width: 120, height: 34)
+                                            .background(Color.red)
+                                            .foregroundStyle(.white)
+                                            .font(.semibold(18))
+                                            .cornerRadius(8)
                                     }
                                     .padding()
                                 }
@@ -173,7 +177,7 @@ struct WriteView: View {
                     
                     Button {
                         writeVM.image = imageVM.imageUrl ?? ""
-                        writeVM.Write()
+                        writeVM.write()
                     } label: {
                         Text("게시 하기")
                             .font(.bold(22))
@@ -183,6 +187,7 @@ struct WriteView: View {
                             .cornerRadius(13)
                             .padding(17)
                     }
+                    .disabled(writeVM.writeDisabled)
                 }
             }
         }

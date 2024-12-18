@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LatestView: View {
     @StateObject var viewModel = LostItemViewModel()
+    @StateObject private var detailVM = DetailViewModel()
     @State private var toDetail = false
     var body: some View {
         HStack {
@@ -17,7 +18,7 @@ struct LatestView: View {
             Spacer()
                 .frame(width: 130)
             NavigationLink {
-                EmptyView()
+                DetailLatestView()
             } label: {
                 Text("자세히")
                     .font(.system(size: 15).weight(.regular))
@@ -29,8 +30,7 @@ struct LatestView: View {
             LazyHStack(spacing: 15) {
                 ForEach(viewModel.latestItems, id: \.id) { item in
                     LatestItemPost(viewModel: item) {
-                        viewModel.id = item.id
-                        viewModel.detailPost()
+                        detailVM.detailPost(id: item.id)
                         toDetail = true
                     }
                 }
@@ -43,7 +43,7 @@ struct LatestView: View {
             viewModel.getLatestItems()
         }
         .navigationDestination(isPresented: $toDetail) {
-            if let detailPost = viewModel.detailItems {
+            if let detailPost = detailVM.detailItems {
                 DetailPostView(getPost: detailPost)
             }
         }

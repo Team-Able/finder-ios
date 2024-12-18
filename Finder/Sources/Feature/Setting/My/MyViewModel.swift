@@ -17,7 +17,7 @@ class MyViewModel: ObservableObject {
     }
     
     func deleteMy() {
-        NetworkRunner.shared.request("/users/secession", method: .delete, response: UserData.self, isAuthorization: true) { result in
+        NetworkRunner.shared.request("/users/secession", method: .delete, response: UserDelete.self, isAuthorization: true) { result in
             switch result {
             case .success(_):
                 UserDefaults.standard.removeObject(forKey: "accessToken")

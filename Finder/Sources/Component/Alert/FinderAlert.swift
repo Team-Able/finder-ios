@@ -16,7 +16,7 @@ struct FinderAlert: ViewModifier {
 }
 
 extension View {
-    func finderAlert(isPresented: Binding<Bool>, message: String, text: String) -> some View {
+    func finderAlert(isPresented: Binding<Bool>, message: String?, text: String) -> some View {
         self.modifier(FinderAlert(isPresented: isPresented, message: message, text: text))
     }
 }
