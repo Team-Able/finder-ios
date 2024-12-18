@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 struct DetailPostView: View {
     @State private var toComment = false
@@ -25,16 +24,17 @@ struct DetailPostView: View {
                 }
                 VStack {
                     if let imageURL = URL(string: getPost.imageUrl) {
-                        KFImage(imageURL)
-                            .placeholder { _ in
-                                ProgressView()
-                            }
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(10)
-                            .frame(width: 330, height: 171)
-                            .cornerRadius(8)
-                            .padding(.top, 320)
+                        AsyncImage(url: imageURL) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(10)
+                                .frame(width: 330, height: 171)
+                                .cornerRadius(8)
+                        }  placeholder: {
+                            ProgressView()
+                        }
+                        .padding(.top, 320)
                     }
                     
                     HStack {

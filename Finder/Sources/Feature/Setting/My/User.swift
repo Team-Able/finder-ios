@@ -1,7 +1,5 @@
-struct UserData: Codable {
+struct UserData: Codable, StatusResponse {
     let data: UserDetail
-    let status: Int
-    let message: String
 }
 
 struct UserDetail: Codable {
@@ -9,10 +7,8 @@ struct UserDetail: Codable {
     let username: String
 }
 
-struct UserDelete: Codable {
+struct UserDelete: Codable, StatusResponse {
     let data: EmptyData
-    let status: Int
-    let message: String
 }
 
 struct EmptyData: Codable {}

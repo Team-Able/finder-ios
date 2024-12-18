@@ -24,10 +24,8 @@ struct LatestPostModel: Identifiable,Codable {
     }
 }
 
-struct LatestStatus: Codable {
+struct LatestStatus: Codable, StatusResponse {
     var data: [LatestPostModel]
-    var status: Int
-    var message: String
 }
 
 

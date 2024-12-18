@@ -177,7 +177,7 @@ struct WriteView: View {
                     
                     Button {
                         writeVM.image = imageVM.imageUrl ?? ""
-                        writeVM.Write()
+                        writeVM.write()
                     } label: {
                         Text("게시 하기")
                             .font(.bold(22))
@@ -187,6 +187,7 @@ struct WriteView: View {
                             .cornerRadius(13)
                             .padding(17)
                     }
+                    .disabled(writeVM.writeDisabled)
                 }
             }
         }

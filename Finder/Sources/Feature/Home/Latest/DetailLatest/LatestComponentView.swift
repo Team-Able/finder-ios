@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 struct LatestComponentView: View {
     let latestVM: LatestPostModel
@@ -18,16 +17,16 @@ struct LatestComponentView: View {
             } label: {
                 HStack {
                     let imageUrl = URL(string: latestVM.imageUrl)
-                    KFImage(imageUrl)
-                        .placeholder { _ in
-                            Rectangle()
-                                .fill(Color.init(uiColor: .systemGray2))
-                                .frame(width: 110, height: 110)
-                        }
-                        .resizable()
-                        .frame(width: 110, height: 110)
-                        .cornerRadius(8)
-                    
+                    AsyncImage(url: imageUrl) { image in
+                        image
+                            .resizable()
+                            .frame(width: 110, height: 110)
+                            .cornerRadius(8)
+                    } placeholder: {
+                        Rectangle()
+                            .fill(Color.init(uiColor: .systemGray2))
+                            .frame(width: 110, height: 110)
+                    }
                     
                     VStack(alignment:.leading) {
                         Text(latestVM.title)

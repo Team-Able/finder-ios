@@ -13,7 +13,6 @@ import Alamofire
 class LostItemViewModel: ObservableObject {
     @Published var items : [ItemInfo] = []
     @Published var latestItems : [LatestPostModel] = []
-    @Published var detailItems : DetailPostModel?
 
     //MARK: 글가져오기
     func fetchItems() {
@@ -33,18 +32,6 @@ class LostItemViewModel: ObservableObject {
             switch result {
             case .success(let data):
                 self.latestItems = data.data
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    func detailPost(id: Int) {
-        let parameters = ["itemId" : id]
-        NetworkRunner.shared.request("/items/\(id)", method: .get, parameters: parameters, response: DetailStatus.self) { result in
-            switch result {
-            case .success(let data):
-                self.detailItems = data.data
             case .failure(let error):
                 print(error.localizedDescription)
             }

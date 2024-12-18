@@ -42,8 +42,6 @@ class ImageUploadViewModel: ObservableObject {
 }
 
 
-struct ImageResponse: Decodable {
+struct ImageResponse: Decodable, StatusResponse {
     let data: String
-    let status: Int
-    let message: String
 }

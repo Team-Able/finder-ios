@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct CommentComponent: View {
-    let comment: Comment
+    let comment: CommentModel
+    let action: () -> Void
     @State private var detailComment = false
     
     var body: some View {
-        ScrollView {
+        VStack {
             HStack {
                 Image(.myimage)
                     .resizable()
@@ -37,16 +38,28 @@ struct CommentComponent: View {
                     detailComment.toggle()
                 } label : {
                     HStack {
-                        Image(systemName: "chevron.down")
-                        Text("답글 4")
+                        Image(systemName: detailComment ? "chevron.forward" : "chevron.down")
+                        Text("답글")
+                            .font(.regular(14))
                     }
-                    Spacer()
                 }
+                .padding(.horizontal, 4)
+                Button {
+                    action()
+                } label: {
+                    Text("댓글달기")
+                        .font(.regular(14))
+                        .foregroundStyle(.black)
+                }
+                Spacer()
             }
             .padding(.leading, 24)
             
             if detailComment {
-                Text("디테링ㄹ")
+                ForEach(comment.children, id: \.id) { childComment in
+                    SubCommentComponent(subComment: childComment)
+                }
+                .padding(.leading, 24)
             }
         }
     }

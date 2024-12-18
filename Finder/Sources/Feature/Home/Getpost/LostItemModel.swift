@@ -24,9 +24,7 @@ struct ItemInfo: Codable {
     }
 }
 
-struct Status: Codable {
+struct Status: Codable, StatusResponse {
     var data: [ItemInfo]
-    var status: Int
-    var message: String
 }
 

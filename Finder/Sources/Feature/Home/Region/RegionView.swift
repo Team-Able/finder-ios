@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegionView: View {
     @StateObject var viewModel = LostItemViewModel()
+    @StateObject private var detailVM = DetailViewModel()
     @State private var toDetail = false
     var body: some View {
         HStack {
@@ -28,7 +29,7 @@ struct RegionView: View {
             LazyHStack(spacing: 15) {
                 ForEach(viewModel.items, id: \.id) { item in
                     LostItemPost(viewModel: item) {
-                        viewModel.detailPost(id: item.id)
+                        detailVM.detailPost(id: item.id)
                         toDetail = true
                     }
                 }
@@ -41,7 +42,7 @@ struct RegionView: View {
             viewModel.fetchItems()
         }
         .navigationDestination(isPresented: $toDetail) {
-            if let detailPost = viewModel.detailItems {
+            if let detailPost = detailVM.detailItems {
                 DetailPostView(getPost: detailPost)
             }
         }

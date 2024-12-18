@@ -1,10 +1,8 @@
 import Foundation
 
 // MARK: - DetailStatus
-struct DetailStatus: Codable {
+struct DetailStatus: Codable, StatusResponse {
     let data: DetailPostModel
-    let status: Int
-    let message: String
 }
 
 // MARK: - DetailPostModel
@@ -25,9 +23,6 @@ struct Author: Codable {
     let id: String
     let profileImageURL: String?
     let username: String
-    let email: String
-    let password: String
-    let role: String
 }
 
 // MARK: - DetailLocation

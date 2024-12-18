@@ -25,30 +25,34 @@ struct CustomTabView: View {
                 
                 if keyboardResponder.keyboardHeight == 0 {
                     GeometryReader { geometry in
-                        HStack {
+                        HStack(spacing: 0) {
                             ForEach(TabViewType.allCases, id: \.self) { tab in
                                 Button(action: {
                                     selectedTab = tab
                                 }) {
-                                    VStack {
+                                    HStack {
                                         TabViewCell(type: tab, isSelected: selectedTab == tab)
                                     }
                                 }
                                 .frame(maxWidth: .infinity)
                             }
                         }
-                        .frame(width: geometry.size.width)
-                        .background(Color.white)
                         .frame(height: 85)
+                        .background(Color.white)
                         .offset(y: geometry.safeAreaInsets.bottom)
                     }
-                    .padding(.horizontal, 20)
+                    .frame(maxWidth: .infinity)
                     .frame(height: 55)
                     .background(Color.white)
+                    .shadow(radius: 0.3)
                     .ignoresSafeArea(edges: .bottom)
                 }
             }
             .padding(.bottom, 13)
         }
     }
+}
+
+#Preview {
+    CustomTabView()
 }

@@ -21,10 +21,8 @@ struct Location: Codable {
 
 
 //MARK: 글쓰기 성공 했을떄
-struct CompleteWrite {
+struct CompleteWrite: StatusResponse {
     let data: DetailDataClass
-    let status: Int
-    let message: String
 }
 
 struct DetailDataClass {

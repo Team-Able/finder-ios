@@ -7,21 +7,21 @@
 
 import Foundation
 
-struct CommentSatatus: Codable {
+//MARK: 댓글 받아오기
+struct CommentStatus: Codable, StatusResponse {
     let data: CommentData
-    let status: Int
-    let message: String
 }
 
 struct CommentData: Codable {
-    let comments: [Comment]
+    let comments: [CommentModel]
 }
 
-struct Comment: Codable {
+
+struct CommentModel: Codable {
     let id: Int
     let content: String
     let author: CommentAuthor
-    let children: [String]
+    let children: [CommentModel]
     let createdAt: String
     let updatedAt: String
 }
@@ -29,6 +29,11 @@ struct Comment: Codable {
 struct CommentAuthor: Codable {
     let id: String
     let username: String
+    let profileImageUrl: String?
 }
 
 
+//MARK: 댓글 썼을때
+struct CommentResponse: Codable, StatusResponse {
+    let data: CommentModel
+}

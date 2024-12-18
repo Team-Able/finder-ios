@@ -6,26 +6,27 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 struct SearchComponent: View {
     let viewModel: SearchModel
+    let action: () -> Void
     
     var body: some View {
-        NavigationLink {
-            EmptyView()
+        Button {
+            action()
         } label: {
             HStack {
                 let imageUrl = URL(string: viewModel.imageUrl)
-                KFImage(imageUrl)
-                    .placeholder { _ in
-                        Rectangle()
-                            .fill(Color.init(uiColor: .systemGray2))
-                            .frame(width: 110, height: 110)
-                    }
-                    .resizable()
-                    .frame(width: 110, height: 110)
-                    .clipShape(RoundedRectangle(cornerRadius: 4))
+                AsyncImage(url: imageUrl) { image in
+                    image
+                        .resizable()
+                        .frame(width: 110, height: 110)
+                } placeholder: {
+                    Rectangle()
+                        .fill(Color.init(uiColor: .systemGray2))
+                        .frame(width: 110, height: 110)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 4))
                 
                 VStack(alignment:.leading) {
                     Text(viewModel.title)

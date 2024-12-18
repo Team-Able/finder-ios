@@ -6,37 +6,28 @@
 //
 
 import SwiftUI
-import Kingfisher
-
 
 struct SearchView: View {
-    @StateObject private var defaultVM = LostItemViewModel()
-    @StateObject private var searchVM = SearchViewModel()
-    @State private var pickerOn = false
+    @StateObject private var defaultVM = LostItemViewModel() //MARK: 기본 게시물 불러오기
+    @StateObject private var searchVM = SearchViewModel() //MARK: 검색 게시물 불러오기
+    @StateObject private var detailVM = DetailViewModel() //MARK: 게시글 자세히 보기
+    
     @State private var searchText = ""
     @State private var editText = false
     @State private var isSearching = false
+    @State private var defaultDetail = false
+    @State private var searchDetail = false
     
     var body: some View {
         ZStack {
             NavigationStack {
                 VStack(alignment: .leading) {
                     HStack {
-                        //                        Button {
-                        //                            pickerOn = true
-                        //                        } label: {
                         Text("분실물 검색")
                             .font(.system(size: 20).weight(.medium))
-                        //                            HStack {
-                        //                                Text("달성군")
-                        //                                    .font(.system(size: 20).weight(.medium))
-                        //
-                        //                                Image(systemName: "chevron.down")
-                        //                                    .font(.system(size: 20).weight(.regular))
-                        //                            }
-                        //                        }
                             .foregroundColor(.black)
                             .padding(.trailing, 15)
+                        
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(lineWidth: 1.0)
                             .frame(width: 243, height: 40)
@@ -79,7 +70,30 @@ struct SearchView: View {
                             }
                     }
                     .frame(height: 80)
-                    .padding(.leading,24)
+                    .padding(.leading, 24)
+                    
+                    VStack {
+                        if !searchVM.autoSearchItem.isEmpty {
+                            VStack(spacing: 0) {
+                                HStack {
+                                    Text("추천 검색어")
+                                        .font(.regular(15))
+                                    Spacer()
+                                }
+                                .padding(.leading, 14)
+                                .padding(.vertical, 4)
+                                ForEach(searchVM.autoSearchItem, id:\.self) { item in
+                                    AutoSearchView(text: item) {
+                                        searchVM.search(search: item)
+                                        isSearching = true
+                                    }
+                                }
+                            }
+                            .padding(.top, -14)
+                            .padding(.leading, 4)
+                        }
+                    }
+                    
                     ScrollView {
                         if searchVM.itemisEmpty {
                             VStack {
@@ -90,13 +104,18 @@ struct SearchView: View {
                         }
                         LazyVStack(alignment: .leading,spacing: 30) {
                             if isSearching {
-                                
                                 ForEach(searchVM.searchItem, id: \.id) { item in
-                                    SearchComponent(viewModel: item)
+                                    SearchComponent(viewModel: item) {
+                                        detailVM.detailPost(id: item.id)
+                                        searchDetail = true
+                                    }
                                 }
                             } else {
                                 ForEach(defaultVM.items, id:\.id) { item in
-                                    SearchDefaultComponnent(viewModel: item)
+                                    SearchDefaultComponnent(viewModel: item) {
+                                        detailVM.detailPost(id: item.id)
+                                        defaultDetail = true
+                                    }
                                 }
                             }
                         }
@@ -106,32 +125,26 @@ struct SearchView: View {
                 Spacer()
                     .navigationBarBackButtonHidden()
             }
-            
             .onAppear {
                 defaultVM.fetchItems()
             }
+            .navigationDestination(isPresented: $searchDetail) {
+                if let detailPost = detailVM.detailItems {
+                    DetailPostView(getPost: detailPost)
+                }
+            }
+            .navigationDestination(isPresented: $defaultDetail) {
+                if let defaultDetailPost = detailVM.detailItems {
+                    DetailPostView(getPost: defaultDetailPost)
+                }
+            }
+            .onChange(of: searchText) { oldValue in
+                searchVM.autoSearch(search: searchText)
+            }
         }
-        //        .overlay {
-        //            if pickerOn {
-        //                VStack {
-        //                    CustomPicker()
-        //                        .overlay {
-        //                            VStack {
-        //                                Rectangle()
-        //                                    .frame(width: 370,height: 225)
-        //                                Spacer()
-        //                                Rectangle()
-        //                                    .frame(width: 370,height: 250)
-        //                            }
-        //                            .foregroundColor(.secondary.opacity(0.01))
-        //                            .onTapGesture {
-        //                                pickerOn = false
-        //                            }
-        //                        }
-        //                }
-        //            }
-        //        }
         .refreshable {
+            isSearching = false
+            searchVM.itemisEmpty = false
             defaultVM.fetchItems()
         }
     }

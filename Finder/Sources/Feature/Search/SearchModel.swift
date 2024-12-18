@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct SearchModel: Identifiable,Codable {
+struct SearchModel: Identifiable, Codable {
     var id: Int
     var title: String
     var content: String
@@ -24,11 +24,7 @@ struct SearchModel: Identifiable,Codable {
     }
 }
 
-struct SearchStatus: Codable {
+struct SearchStatus: Codable, StatusResponse {
     var data: [SearchModel]
-    var status: Int
-    var message: String
 }
-
-
 
