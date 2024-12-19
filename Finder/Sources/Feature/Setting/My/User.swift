@@ -3,6 +3,7 @@ struct UserData: Codable, StatusResponse {
 }
 
 struct UserDetail: Codable {
+    let profileImageUrl: String
     let email: String
     let username: String
 }

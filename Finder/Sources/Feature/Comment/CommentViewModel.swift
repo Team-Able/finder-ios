@@ -24,6 +24,7 @@ class CommentViewModel: ObservableObject {
             case .success(_):
                 self.completePost = true
                 self.content = ""
+                self.getComments(itemId: itemId)
             case .failure(let error):
                 print(error.localizedDescription)
             }

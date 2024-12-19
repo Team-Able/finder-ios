@@ -8,21 +8,29 @@
 import SwiftUI
 
 struct MyView: View {
-    @StateObject var myVM = MyViewModel()
     @Environment(\.openURL) private var openURL
+    @StateObject var myVM = MyViewModel()
     @State private var isAlertPresented = false
     let url = Terms.shared
+    
     var body: some View {
         ScrollView {
             ZStack {
                 VStack {
-                    Image(.myimage)
-                        .frame(width: 130,height: 130)
+                    AsyncImage(url: URL(string: myVM.profileImageUrl)) { image in
+                        image
+                            .resizable()
+                            .frame(width: 130,height: 130)
+                    } placeholder: {
+                        Rectangle()
+                            .frame(width: 130,height: 130)
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 100))
                     Text("\(myVM.username)님")
                         .font(.medium(20))
                     Text("이메일: \(myVM.email)")
                     Button {
-                        isAlertPresented.toggle()
+                        isAlertPresented = true
                     } label: {
                         Text("프로필 수정")
                             .font(.regular(15))
@@ -78,17 +86,21 @@ struct MyView: View {
                         )
                     }
                 }
-                
-                if isAlertPresented {
-                    UpdateProfileView(isPresented: $isAlertPresented)
-                        .transition(.move(edge: .bottom))
-                        .animation(.easeInOut, value: isAlertPresented)
-                }
             }
         }
-        .onAppear {
-            myVM.fetchMy()
-        }
+        .finderAlert(isPresented: $myVM.patchComplete, message: nil, text: "정보수정 완료")
+            .padding()
+            .backButton()
+            .onAppear {
+                myVM.fetchMy()
+            }
+            .overlay {
+                if isAlertPresented {
+                    UpdateProfileView(userVM: myVM, isPresented: $isAlertPresented)
+                        .animation(.easeInOut, value: isAlertPresented)
+                        .ignoresSafeArea()
+                }
+            }
     }
 }
 

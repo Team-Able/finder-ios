@@ -87,6 +87,7 @@
 		65F6C1232D12555800E7269E /* AutoSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6C1222D12555800E7269E /* AutoSearch.swift */; };
 		65F6C1252D12580700E7269E /* AutoSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6C1242D12580700E7269E /* AutoSearchView.swift */; };
 		65F6C12A2D12DC4800E7269E /* SubCommentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6C1292D12DC4800E7269E /* SubCommentComponent.swift */; };
+		65F6C2592D14045000E7269E /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6C2582D14045000E7269E /* MyModel.swift */; };
 		65FEC7082C8F25040067A2C5 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FEC7072C8F25040067A2C5 /* ProgressBarView.swift */; };
 		65FEC7142C8F3A780067A2C5 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC70B2C8F3A770067A2C5 /* Pretendard-Black.ttf */; };
 		65FEC7152C8F3A780067A2C5 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65FEC70C2C8F3A770067A2C5 /* Pretendard-SemiBold.ttf */; };
@@ -197,6 +198,7 @@
 		65F6C1222D12555800E7269E /* AutoSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSearch.swift; sourceTree = "<group>"; };
 		65F6C1242D12580700E7269E /* AutoSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSearchView.swift; sourceTree = "<group>"; };
 		65F6C1292D12DC4800E7269E /* SubCommentComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCommentComponent.swift; sourceTree = "<group>"; };
+		65F6C2582D14045000E7269E /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
 		65FEC7072C8F25040067A2C5 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		65FEC70B2C8F3A770067A2C5 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
 		65FEC70C2C8F3A770067A2C5 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				65770E932CB8A5BA00A9E9D8 /* MyViewModel.swift */,
 				65770E992CB8F4A000A9E9D8 /* User.swift */,
 				65770EC62CBBCAD500A9E9D8 /* UpdateProfileView.swift */,
+				65F6C2582D14045000E7269E /* MyModel.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				65EB25922D0EC0C400D4ABCF /* DetailLatestView.swift in Sources */,
 				65770E862CB7E64900A9E9D8 /* WriteView.swift in Sources */,
 				65770E5D2CB51C2500A9E9D8 /* FontExt.swift in Sources */,
+				65F6C2592D14045000E7269E /* MyModel.swift in Sources */,
 				65EB25562D0DC86E00D4ABCF /* DeleteUser.swift in Sources */,
 				65868C132CBE966A00800E43 /* WriteViewModel.swift in Sources */,
 				65AE25192CFDBF6000FD494A /* FinderAlert.swift in Sources */,

@@ -29,7 +29,7 @@ struct CommentModel: Codable {
 struct CommentAuthor: Codable {
     let id: String
     let username: String
-    let profileImageUrl: String?
+    let profileImageUrl: String
 }
 
 
