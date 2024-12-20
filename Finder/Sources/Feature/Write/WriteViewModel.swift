@@ -9,7 +9,7 @@ class WriteViewModel: ObservableObject {
     @Published var longitude = 128.8784972
     
     var writeDisabled: Bool {
-        title.isEmpty || content.isEmpty || image == nil
+        title.isEmpty || content.isEmpty
     }
     
     func write() {

@@ -22,7 +22,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 }
 
 struct WriteView: View {
-    @Environment(\.dismiss) var dismiss
     @StateObject var imageVM = ImageUploadViewModel()
     @StateObject var writeVM = WriteViewModel()
     @StateObject private var locationManager = LocationManager()
@@ -183,11 +182,11 @@ struct WriteView: View {
                             .font(.bold(22))
                             .foregroundColor(.white)
                             .frame(width: 330, height: 60)
-                            .background(writeVM.content.isEmpty || writeVM.title.isEmpty ? Color.init(uiColor: .systemGray4): .primary500)
+                            .background(writeVM.writeDisabled || imageVM.imageUrl == nil ? Color.init(uiColor: .systemGray4): .primary500)
                             .cornerRadius(13)
                             .padding(17)
                     }
-                    .disabled(writeVM.writeDisabled)
+                    .disabled(writeVM.writeDisabled || imageVM.imageUrl == nil)
                 }
             }
         }

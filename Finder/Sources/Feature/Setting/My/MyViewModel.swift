@@ -47,34 +47,4 @@ class MyViewModel: ObservableObject {
             }
         }
     }
-    
-    func patchMyImage(imageUrl: String) {
-        let parameters : [String : Any] = [
-            "profileImageURL" : imageUrl,
-        ]
-        NetworkRunner.shared.request("/users/me", method: .patch, parameters: parameters, response: MyModelStatus.self) { result in
-            switch result {
-            case .success(_):
-                self.patchComplete = true
-                self.fetchMy()
-            case .failure(_):
-                print("실패")
-            }
-        }
-    }
-    
-    func patchMyName(userName: String) {
-        let parameters : [String : Any] = [
-            "username" : userName
-        ]
-        NetworkRunner.shared.request("/users/me", method: .patch, parameters: parameters, response: MyModelStatus.self) { result in
-            switch result {
-            case .success(_):
-                self.patchComplete = true
-                self.fetchMy()
-            case .failure(_):
-                print("실패")
-            }
-        }
-    }
 }

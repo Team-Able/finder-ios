@@ -20,6 +20,8 @@
 		6512EB5F2C7737B40044FDEE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6512EB5E2C7737B40044FDEE /* Alamofire */; };
 		6512EB652C7737DA0044FDEE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512EB642C7737DA0044FDEE /* LoginView.swift */; };
 		6512EB672C7737F50044FDEE /* LogOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6512EB662C7737F50044FDEE /* LogOutButton.swift */; };
+		6515AF8A2D14E99A009131EB /* KaKaoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515AF892D14E99A009131EB /* KaKaoMapView.swift */; };
+		6515B1002D153F43009131EB /* RegionComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6515B0FF2D153F43009131EB /* RegionComponentView.swift */; };
 		6562BC542CACC215008255D7 /* ServerUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562BC532CACC215008255D7 /* ServerUrl.swift */; };
 		6562BC562CAD8680008255D7 /* FinderSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562BC552CAD8680008255D7 /* FinderSecureField.swift */; };
 		65770E572CB5155300A9E9D8 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65770E562CB5155300A9E9D8 /* BackButton.swift */; };
@@ -77,6 +79,7 @@
 		65EB258F2D0EBF8E00D4ABCF /* DetailRegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB258E2D0EBF8E00D4ABCF /* DetailRegionView.swift */; };
 		65EB25922D0EC0C400D4ABCF /* DetailLatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB25912D0EC0C400D4ABCF /* DetailLatestView.swift */; };
 		65EB25942D0EC29300D4ABCF /* LatestComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB25932D0EC29300D4ABCF /* LatestComponentView.swift */; };
+		65F3B1F12D144238002EA20C /* KaKao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F3B1F02D144238002EA20C /* KaKao.swift */; };
 		65F6BA2F2D103D6800E7269E /* FlowKit in Frameworks */ = {isa = PBXBuildFile; productRef = 65F6BA2E2D103D6800E7269E /* FlowKit */; };
 		65F6BA5C2D10455200E7269E /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6BA5B2D10455200E7269E /* SearchModel.swift */; };
 		65F6BA5E2D10460300E7269E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F6BA5D2D10460300E7269E /* SearchViewModel.swift */; };
@@ -117,6 +120,8 @@
 		6512EB5A2C77363C0044FDEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6512EB642C7737DA0044FDEE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6512EB662C7737F50044FDEE /* LogOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButton.swift; sourceTree = "<group>"; };
+		6515AF892D14E99A009131EB /* KaKaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoMapView.swift; sourceTree = "<group>"; };
+		6515B0FF2D153F43009131EB /* RegionComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionComponentView.swift; sourceTree = "<group>"; };
 		6562BC532CACC215008255D7 /* ServerUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerUrl.swift; sourceTree = "<group>"; };
 		6562BC552CAD8680008255D7 /* FinderSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSecureField.swift; sourceTree = "<group>"; };
 		65770E562CB5155300A9E9D8 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
@@ -189,6 +194,7 @@
 		65EB258E2D0EBF8E00D4ABCF /* DetailRegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRegionView.swift; sourceTree = "<group>"; };
 		65EB25912D0EC0C400D4ABCF /* DetailLatestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLatestView.swift; sourceTree = "<group>"; };
 		65EB25932D0EC29300D4ABCF /* LatestComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestComponentView.swift; sourceTree = "<group>"; };
+		65F3B1F02D144238002EA20C /* KaKao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKao.swift; sourceTree = "<group>"; };
 		65F6BA5B2D10455200E7269E /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		65F6BA5D2D10460300E7269E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		65F6BA5F2D104CB600E7269E /* SearchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchComponent.swift; sourceTree = "<group>"; };
@@ -296,7 +302,6 @@
 				65EB255A2D0DCC7900D4ABCF /* Latest */,
 				65EB25572D0DCBA300D4ABCF /* Region */,
 				65EB24282D0C7D9100D4ABCF /* Getpost */,
-				65EB24272D0C7D8300D4ABCF /* Detail */,
 				65770E892CB8060900A9E9D8 /* HomeView.swift */,
 				65AE25162CFDB1DB00FD494A /* HomeModel.swift */,
 			);
@@ -430,6 +435,7 @@
 		65770E842CB7E64000A9E9D8 /* Write */ = {
 			isa = PBXGroup;
 			children = (
+				65F3B1EF2D144224002EA20C /* Kakao */,
 				65868C192CBF9D6600800E43 /* MapKit */,
 				65868C162CBE984C00800E43 /* ImageServer */,
 				65770E852CB7E64900A9E9D8 /* WriteView.swift */,
@@ -530,14 +536,6 @@
 			path = Comment;
 			sourceTree = "<group>";
 		};
-		65EB24272D0C7D8300D4ABCF /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				65EB24342D0DAE1600D4ABCF /* DetailPostModel.swift */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
 		65EB24282D0C7D9100D4ABCF /* Getpost */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +568,7 @@
 			isa = PBXGroup;
 			children = (
 				65EB258E2D0EBF8E00D4ABCF /* DetailRegionView.swift */,
+				6515B0FF2D153F43009131EB /* RegionComponentView.swift */,
 			);
 			path = DetailRegion;
 			sourceTree = "<group>";
@@ -578,15 +577,25 @@
 			isa = PBXGroup;
 			children = (
 				65EB25912D0EC0C400D4ABCF /* DetailLatestView.swift */,
-				65EB24252D0C7D6500D4ABCF /* DetailPostView.swift */,
 				65EB25932D0EC29300D4ABCF /* LatestComponentView.swift */,
 			);
 			path = DetailLatest;
 			sourceTree = "<group>";
 		};
+		65F3B1EF2D144224002EA20C /* Kakao */ = {
+			isa = PBXGroup;
+			children = (
+				65F3B1F02D144238002EA20C /* KaKao.swift */,
+				6515AF892D14E99A009131EB /* KaKaoMapView.swift */,
+			);
+			path = Kakao;
+			sourceTree = "<group>";
+		};
 		65F6BEE12D11872700E7269E /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				65EB24342D0DAE1600D4ABCF /* DetailPostModel.swift */,
+				65EB24252D0C7D6500D4ABCF /* DetailPostView.swift */,
 				65F6BEDF2D11871D00E7269E /* DetailViewModel.swift */,
 			);
 			path = Detail;
@@ -864,6 +873,7 @@
 				6562BC562CAD8680008255D7 /* FinderSecureField.swift in Sources */,
 				65770E742CB53B4000A9E9D8 /* NextButton.swift in Sources */,
 				65770E5A2CB5197F00A9E9D8 /* PermitView.swift in Sources */,
+				6515AF8A2D14E99A009131EB /* KaKaoMapView.swift in Sources */,
 				65868C1B2CBF9DCF00800E43 /* MapController.swift in Sources */,
 				65770E762CB5422100A9E9D8 /* PermitViewModel.swift in Sources */,
 				65770E912CB8A59700A9E9D8 /* MyView.swift in Sources */,
@@ -875,6 +885,7 @@
 				65770E8C2CB8073400A9E9D8 /* Banner.swift in Sources */,
 				65770E782CB6B28800A9E9D8 /* CheckPassWord.swift in Sources */,
 				65AE22D12CFDAB2200FD494A /* AuthInterceptor.swift in Sources */,
+				6515B1002D153F43009131EB /* RegionComponentView.swift in Sources */,
 				6512EB652C7737DA0044FDEE /* LoginView.swift in Sources */,
 				651243282C7885D3008E798D /* SignUpViewModel.swift in Sources */,
 				65770E802CB7E39000A9E9D8 /* TabViewCell.swift in Sources */,
@@ -891,6 +902,7 @@
 				65D134FD2D1005CC00B88A0D /* CommentViewModel.swift in Sources */,
 				65AE22D52CFDABA400FD494A /* FinderUrl.swift in Sources */,
 				65EB25602D0DCE8800D4ABCF /* LatestItemPost.swift in Sources */,
+				65F3B1F12D144238002EA20C /* KaKao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,6 +1040,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Finder/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱을 사용하는 동안 위치 정보를 사용하기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1060,6 +1073,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Finder/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱을 사용하는 동안 위치 정보를 사용하기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

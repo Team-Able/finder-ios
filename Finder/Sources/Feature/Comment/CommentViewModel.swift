@@ -37,8 +37,8 @@ class CommentViewModel: ObservableObject {
         NetworkRunner.shared.request("/items/\(itemId)/comment", method: .get, parameters: id, response: CommentStatus.self, isAuthorization: true) { result in
             switch result {
             case .success(let data):
-                self.comments = data.data.comments
-                self.parentId = data.data.comments.first?.id
+                self.comments = data.data
+                self.parentId = data.data.first?.id
             case .failure(let error):
                 print(error.localizedDescription)
             }

@@ -20,12 +20,15 @@ struct MyView: View {
                     AsyncImage(url: URL(string: myVM.profileImageUrl)) { image in
                         image
                             .resizable()
+                            .aspectRatio(contentMode: .fill)
                             .frame(width: 130,height: 130)
                     } placeholder: {
                         Rectangle()
                             .frame(width: 130,height: 130)
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 100))
+                    .padding()
+                    
                     Text("\(myVM.username)님")
                         .font(.medium(20))
                     Text("이메일: \(myVM.email)")

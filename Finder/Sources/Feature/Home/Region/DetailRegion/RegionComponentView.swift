@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct LatestComponentView: View {
-    let latestVM: LatestPostModel
+struct RegionComponentView: View {
+    let regionVM: ItemInfo
     let action: () -> Void
     
     var body: some View {
@@ -17,7 +17,7 @@ struct LatestComponentView: View {
                 action()
             } label: {
                 HStack {
-                    let imageUrl = URL(string: latestVM.imageUrl)
+                    let imageUrl = URL(string: regionVM.imageUrl)
                     AsyncImage(url: imageUrl) { image in
                         image
                             .resizable()
@@ -31,13 +31,13 @@ struct LatestComponentView: View {
                     }
                     
                     VStack(alignment:.leading) {
-                        Text(latestVM.title)
+                        Text(regionVM.title)
                             .font(.system(size: 16).weight(.semibold))
                             .padding(.bottom,10)
-                        Text(latestVM.content)
+                        Text(regionVM.content)
                             .font(.system(size: 12).weight(.regular))
                         HStack {
-                            Text(latestVM.createdAt)
+                            Text(regionVM.createdAt)
                                 .font(.system(size: 12).weight(.regular))
                             Spacer().frame(width: 40)
                             

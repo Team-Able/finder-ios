@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DetailLatestView: View {
     @StateObject private var latestVM = LostItemViewModel()
+    @StateObject private var detailVM = DetailViewModel()
+    @State private var toDetail = false
     var body: some View {
         VStack {
             HStack {
@@ -19,12 +21,23 @@ struct DetailLatestView: View {
             .padding()
             ScrollView {
                 ForEach(latestVM.latestItems, id: \.id) { latestPost in
-                    LatestComponentView(latestVM: latestPost)
+                    LatestComponentView(latestVM: latestPost) {
+                        detailVM.detailPost(id: latestPost.id)
+                        toDetail = true
+                    }
                 }
             }
         }
         .backButton()
         .onAppear {
+            latestVM.getLatestItems()
+        }
+        .navigationDestination(isPresented: $toDetail) {
+            if let detailPost = detailVM.detailItems {
+                DetailPostView(getPost: detailPost)
+            }
+        }
+        .refreshable {
             latestVM.getLatestItems()
         }
     }

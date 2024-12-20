@@ -8,23 +8,35 @@
 import SwiftUI
 
 struct Header: View {
-    @State private var toSetting = false
+    @StateObject private var myVM = MyViewModel()
     var body: some View {
         HStack {
             Image(.logo)
                 .resizable()
                 .frame(width: 150, height: 52)
             Spacer()
-            Button(action: {
-                toSetting = true
-            }, label: {
-                Image(.my)
-            })
+            NavigationLink {
+                MyView()
+            } label: {
+                if let imageUrl = URL(string:myVM.profileImageUrl) {
+                    AsyncImage(url: imageUrl) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 40, height: 40)
+                    } placeholder: {
+                        Rectangle()
+                            .fill(Color.init(uiColor: .systemGray2))
+                            .frame(width: 40, height: 40)
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 50))
+                }
+            }
             .padding()
         }
         .padding(.horizontal, 8)
-        .navigationDestination(isPresented: $toSetting) {
-            MyView()
+        .onAppear {
+            myVM.fetchMy()
         }
     }
 }

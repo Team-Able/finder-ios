@@ -9,11 +9,7 @@ import Foundation
 
 //MARK: 댓글 받아오기
 struct CommentStatus: Codable, StatusResponse {
-    let data: CommentData
-}
-
-struct CommentData: Codable {
-    let comments: [CommentModel]
+    let data: [CommentModel]
 }
 
 
