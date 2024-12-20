@@ -5,8 +5,8 @@ class WriteViewModel: ObservableObject {
     @Published var title = ""
     @Published var content = ""
     @Published var image: String? = ""
-    @Published var latitude = 37.74913611
-    @Published var longitude = 128.8784972
+    @Published var latitude = 37.51112
+    @Published var longitude = 127.095973
     
     var writeDisabled: Bool {
         title.isEmpty || content.isEmpty

@@ -8,12 +8,28 @@
 import SwiftUI
 
 struct DetailPostView: View {
+    @State var draw: Bool = false
     @State private var toComment = false
+    @State private var longitude: Double
+    @State private var latitude: Double
+    
     let getPost: DetailPostModel
     
+    init(getPost: DetailPostModel) {
+        _longitude = State(initialValue: getPost.location.longitude)
+        _latitude = State(initialValue: getPost.location.latitude)
+        self.getPost = getPost
+    }
+
     var body: some View {
         ZStack {
-            Color.blue
+            KakaoMapView(draw: $draw, longitude: $longitude, latitude: $latitude)
+                .onAppear(perform: {
+                    self.draw = true
+                }).onDisappear(perform: {
+                    self.draw = false
+                })
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             ZStack {
                 VStack {
                     Spacer()
@@ -30,8 +46,7 @@ struct DetailPostView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .cornerRadius(10)
                                 .frame(width: 330, height: 171)
-                                .cornerRadius(8)
-                        }  placeholder: {
+                        } placeholder: {
                             ProgressView()
                         }
                         .padding(.top, 320)
