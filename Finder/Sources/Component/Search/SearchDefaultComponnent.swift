@@ -20,6 +20,7 @@ struct SearchDefaultComponnent: View {
                 AsyncImage(url: imageUrl) { image in
                     image
                         .resizable()
+                        .aspectRatio(contentMode: .fill) 
                         .frame(width: 110, height: 110)
                 } placeholder: {
                     Rectangle()

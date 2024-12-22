@@ -1,38 +1,10 @@
 import SwiftUI
-import MapKit
-import CoreLocation
-
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    private let locationManager = CLLocationManager()
-    @Published var userLocation: CLLocationCoordinate2D?
-    
-    override init() {
-        super.init()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            userLocation = location.coordinate
-            locationManager.stopUpdatingLocation()
-        }
-    }
-}
 
 struct WriteView: View {
-    @Environment(\.dismiss) var dismiss
     @StateObject var imageVM = ImageUploadViewModel()
     @StateObject var writeVM = WriteViewModel()
-    @StateObject private var locationManager = LocationManager()
-    
     @State private var showingMapKit = false
     @State private var showImagePicker = false
-    
-    @State private var selectedLatitude: Double = 0.0
-    @State private var selectedLongitude: Double = 0.0
-    
     @State private var existingImage = false
     
     let postText = "이미지를 등록 해주세요"
@@ -75,16 +47,8 @@ struct WriteView: View {
                 }
                 .padding(.vertical, 4)
                 .sheet(isPresented: $showingMapKit) {
-                    if let userLocation = locationManager.userLocation {
-                        MapView(latitude: $selectedLatitude, longitude: $selectedLongitude, initialLatitude: userLocation.latitude, initialLongitude: userLocation.longitude)
-                            .edgesIgnoringSafeArea(.all)
-                            .presentationDetents([.fraction(0.85)])
-                    } else {
-                        Text("현재 위치를 가져오는 중입니다...")
-                            .font(.headline)
-                            .foregroundColor(.gray)
-                            .padding()
-                    }
+                    ChooseLocate()
+                        .ignoresSafeArea()
                 }
                 
                 VStack {
@@ -183,11 +147,11 @@ struct WriteView: View {
                             .font(.bold(22))
                             .foregroundColor(.white)
                             .frame(width: 330, height: 60)
-                            .background(writeVM.content.isEmpty || writeVM.title.isEmpty ? Color.init(uiColor: .systemGray4): .primary500)
+                            .background(writeVM.writeDisabled || imageVM.imageUrl == nil ? Color.init(uiColor: .systemGray4): .primary500)
                             .cornerRadius(13)
                             .padding(17)
                     }
-                    .disabled(writeVM.writeDisabled)
+                    .disabled(writeVM.writeDisabled || imageVM.imageUrl == nil)
                 }
             }
         }

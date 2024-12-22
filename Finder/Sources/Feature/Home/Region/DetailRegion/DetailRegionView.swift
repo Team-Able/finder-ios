@@ -9,6 +9,9 @@ import SwiftUI
 
 struct DetailRegionView: View {
     @StateObject private var Username = MyViewModel()
+    @StateObject private var viewModel = LostItemViewModel()
+    @StateObject private var detailVM = DetailViewModel()
+    @State private var toDetail = false
     var body: some View {
         VStack {
             HStack {
@@ -17,9 +20,27 @@ struct DetailRegionView: View {
                 Spacer()
             }
             .padding()
+            ScrollView {
+                ForEach(viewModel.items, id: \.id) { region in
+                    RegionComponentView(regionVM: region) {
+                        detailVM.detailPost(id: region.id)
+                        toDetail = true
+                    }
+                }
+            }
+        }
+        .backButton()
+        .navigationDestination(isPresented: $toDetail) {
+            if let detailPost = detailVM.detailItems {
+                DetailPostView(getPost: detailPost)
+            }
         }
         .onAppear {
+            viewModel.fetchItems()
             Username.fetchMy()
+        }
+        .refreshable {
+            viewModel.fetchItems()
         }
     }
 }

@@ -12,10 +12,16 @@ struct SubCommentComponent: View {
     
     var body: some View {
         HStack {
-            Image(.myimage)
-                .resizable()
-                .frame(width: 57, height: 57)
-                .padding()
+            AsyncImage(url: URL(string: subComment.author.profileImageUrl)) { image in
+                image
+                    .resizable()
+                    .frame(width: 57, height: 57)
+            } placeholder: {
+                Rectangle()
+                    .frame(width: 57, height: 57)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 100))
+            .padding()
             VStack(alignment: .leading, spacing: 2) {
                 Text(subComment.author.username)
                     .font(.bold(16))

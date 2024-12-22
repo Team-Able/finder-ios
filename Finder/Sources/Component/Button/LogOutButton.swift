@@ -43,7 +43,6 @@ struct LogOutButton: View {
             }
             
         }
-        .backButton()
     }
     
     func logout() {

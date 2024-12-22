@@ -31,6 +31,7 @@ class ImageUploadViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.imageUrl = data.data
                 }
+                completion(data.data)
             case .failure(let error):
                 DispatchQueue.main.async {
                     print("이미지 업로드 실패: \(error.localizedDescription)")
